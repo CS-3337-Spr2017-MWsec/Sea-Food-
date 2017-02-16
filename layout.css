@@ -1,0 +1,38 @@
+/* layout.css */
+
+html, body{
+    margin: 0;
+}
+
+header {
+    background-color: deepskyblue;
+    border: 1px solid black;
+    
+}
+nav {
+    background-color: coral;
+    border: 1px solid black;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+aside {
+    background-color: aqua;
+    
+    width: 35%;
+    float: right;
+}
+main{
+    background-color: mistyrose;
+    
+    width: 65%;
+    float: left;
+    
+}
+footer {
+    background-color: gainsboro;
+    border: 1px solid black;
+    clear: both;
+}
