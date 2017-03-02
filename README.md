@@ -24,10 +24,10 @@ DESCRIPTION:
 +Seafood (Crustaceans) live feed online market.
     
     ++FUNCTIONAL REQUIREMENTS (!!!REQUIRED!!!)
-        -User(s) shall be able to view live seafood in tanks via live feed.
-            -Live feed: web cameras
+        ..* User(s) shall be able to view live seafood in tanks via live feed.
+            ..* Live feed: web cameras
 
-        -User(s) shall be able to get information of individual animals in tanks.
+        ..* User(s) shall be able to get information of individual animals in tanks.
             -Information: weight, lenght (inches), arrival date, type of animal, quantity
 
         -User(s) shall be able to view their shopping carts.
