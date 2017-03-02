@@ -13,8 +13,12 @@ DESCRIPTION:
      
     //CUSTOMERS
     Once the user has placed an order, a shipping label will be generated with their respective address to ship to. 
-     The users shall be able to create accounts for orders and store personal information. Customers would also be able
-     to view order history. Users will be able to view information about the product they are purchasing.
+	
+    The users shall be able to create accounts for orders and store personal information. 
+	
+	Customers would also be able to view order history.
+
+	Users will be able to view information about the product they are purchasing.
 
 
 
