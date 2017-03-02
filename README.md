@@ -1,4 +1,4 @@
-# Sea-Food-
+# SEE-FOOD
 SEE-FOOD REQUIREMENTS (Web project, webcam, label printer)
 =====================
 
