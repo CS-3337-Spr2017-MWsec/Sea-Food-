@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But do not Ignore these files...
+!.gitignore
+
+!stanley
+!stanley/**
+
+
+
+
+#Additional Specific files to Ignore
