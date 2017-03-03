@@ -2,8 +2,8 @@
 
 
 ## SEE-FOOD REQUIREMENTS: 
-* Web project, 
-* webcam,
+* Web project
+* Webcam
 * label printer
 
 
