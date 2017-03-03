@@ -1,9 +1,13 @@
-# SEE-FOOD
-SEE-FOOD REQUIREMENTS (Web project, webcam, label printer)
-=====================
+#SEE-FOOD
 
-##DESCRIPTION:
-    ###VENDORS
+
+##SEE-FOOD REQUIREMENTS (Web project, webcam, label printer)
+
+
+###DESCRIPTION
+
+
+    ###VENDORS:
     The website will allow users to view live seafood products via live feed camera for them to choose for purchase.
      We will be able to update current animals in stock when new products are in stock and/or when they are out of stock.
      Users will also be able to edit their shopping carts allowing for the adding and/or removal of products. The vendors
@@ -11,14 +15,12 @@ SEE-FOOD REQUIREMENTS (Web project, webcam, label printer)
      and customer order history. Each order will have a unique order ID for records. Every new customer account will also
      have a unique customer ID generated.
      
-    ### CUSTOMERS
-    Once the user has placed an order, a shipping label will be generated with their respective address to ship to. 
-	
-    The users shall be able to create accounts for orders and store personal information. 
-	
-	Customers would also be able to view order history.
-
-	Users will be able to view information about the product they are purchasing.
+     
+     ###CUSTOMERS
+    * Once the user has placed an order, a shipping label will be generated with their respective address to ship to. 
+    * The users shall be able to create accounts for orders and store personal information. 
+	* Customers would also be able to view order history.
+	* Users will be able to view information about the product they are purchasing.
 
 
 
