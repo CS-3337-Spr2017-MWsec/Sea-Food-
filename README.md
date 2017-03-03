@@ -8,15 +8,16 @@
 
 
     ###VENDORS:
-    The website will allow users to view live seafood products via live feed camera for them to choose for purchase.
-     We will be able to update current animals in stock when new products are in stock and/or when they are out of stock.
-     Users will also be able to edit their shopping carts allowing for the adding and/or removal of products. The vendors
-     would also be allowed to view transactions and open sales orders. Vendors will be able to view customer information
-     and customer order history. Each order will have a unique order ID for records. Every new customer account will also
-     have a unique customer ID generated.
+    
+    * The website will allow users to view live seafood products via live feed camera for them to choose for purchase.
+     * We will be able to update current animals in stock when new products are in stock and/or when they are out of stock.
+     * Users will also be able to edit their shopping carts allowing for the adding and/or removal of products. 
+     * The vendors would also be allowed to view transactions and open sales orders. *Vendors will be able to view customer information and customer order history. 
+     * Each order will have a unique order ID for records. Every new customer account will also have a unique customer ID generated.
      
      
-     ###CUSTOMERS
+     ###CUSTOMERS: 
+     
     * Once the user has placed an order, a shipping label will be generated with their respective address to ship to. 
     * The users shall be able to create accounts for orders and store personal information. 
 	* Customers would also be able to view order history.
