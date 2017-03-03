@@ -1,4 +1,3 @@
-<p align = "center">
 # SEE-FOOD :fish:
 
 <img src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png" width="320" height="213">
