@@ -1,10 +1,10 @@
-#SEE-FOOD
+# SEE-FOOD
 
 
-##SEE-FOOD REQUIREMENTS (Web project, webcam, label printer)
+## SEE-FOOD REQUIREMENTS Web project, webcam, label printer
 
 
-###DESCRIPTION
+### DESCRIPTION
 
 
     ###VENDORS:
