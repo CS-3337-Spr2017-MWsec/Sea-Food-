@@ -4,8 +4,11 @@
 # But do not Ignore these files...
 !.gitignore
 
-!stanley
-!stanley/**
+!See-Food_Website
+
+!See-Food_Website/**
+
+
 
 
 
