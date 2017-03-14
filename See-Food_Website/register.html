@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>STANLEY - Free Bootstrap Theme </title>
+    <title>SRegistration Form </title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -40,14 +40,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">STANLEY</a>
+                <a class="navbar-brand" href="index.html">See-Food</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="work.html">Work</a></li>
+                    <li><a href="market.html">Market</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="Shopping_Cart.html">Shopping Cart</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="register.html">Register</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -57,48 +58,71 @@
 
     <!-- +++++ Contact Section +++++ -->
 
-    <div class="container pt">
-        <div class="row mt">
-            <div class="col-lg-6 col-lg-offset-3 centered">
-                <h3>Registration</h3>
-                <hr>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    <div class="container">
+        <h1 class="well">Registration Form</h1>
+        <div class="col-lg-12 well">
+            <div class="row">
+                <form>
+                    <div class="col-sm-12">
+
+                        <div class="row">
+                            <label>UserName</label>
+                            <input type="text" placeholder="Enter Username" class="form-control" style="width:300px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Password</label>
+                            <input id="password" name="password" required="required" input type="password" placeholder="Enter a Password" class="form-control">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="ReEnter same Password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="Enter First Name Here.." class="form-control">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Enter Last Name Here.." class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="Enter City Name Here.." class="form-control">
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>State</label>
+                            <input type="text" placeholder="Enter State Name Here.." class="form-control">
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Zip</label>
+                            <input type="text" placeholder="Enter Zip Code Here.." class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="Enter Phone Number Here.." class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="text" placeholder="Enter Email Address Here.." class="form-control">
+                    </div>
+
+                    <button type="button" class="btn btn-lg btn-info">Submit</button>
             </div>
+            </form>
         </div>
-        <div class="row mt">
-            <div class="col-lg-8 col-lg-offset-2">
-                <form role="form">
-                    <div class="form-group">
-                        <input type="name" class="form-control" id="UserName" placeholder="Enter a Username">
-                        <br>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="name" class="form-control" id="First" placeholder="First Name">
-                        <br>
-                    </div>
-                    
-                    
-                    <div class="form-group">
-                        <input type="name" class="form-control" id="Last" placeholder="Last Name">
-                        <br>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                        <br>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="subjectEmail1" placeholder="Subject">
-                        <br>
-                    </div>
-                    <textarea class="form-control" rows="6" placeholder="Enter your text here"></textarea>
-                    <br>
-                    <button type="submit" class="btn btn-success">SUBMIT</button>
-                </form>
-            </div>
-        </div>
-        <!-- /row -->
+    </div>
     </div>
     <!-- /container -->
 
