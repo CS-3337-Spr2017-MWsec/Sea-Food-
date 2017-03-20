@@ -4,6 +4,7 @@
 					
 </p>
 ## SEE-FOOD REQUIREMENTS: 
+
 * Web project
 * Webcam
 * label printer
@@ -35,7 +36,8 @@
 
 ###Seafood (Crustaceans) live feed online market.
 
-##FUNCTIONAL REQUIREMENTS (!!!REQUIRED!!!): 
+##FUNCTIONAL REQUIREMENTS (!!!REQUIRED!!!):
+
 * User(s) shall be able to view live seafood in tanks via live feed.
      *Live feed: web cameras
 
