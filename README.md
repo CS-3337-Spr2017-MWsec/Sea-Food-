@@ -12,7 +12,7 @@
 ## DESCRIPTION:
 
 
-###VENDORS:
+### VENDORS:
     
 * The website will allow users to view live seafood products via live feed camera for them to choose for purchase.
 * We will be able to update current animals in stock when new products are in stock and/or when they are out of stock.
