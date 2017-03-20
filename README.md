@@ -21,7 +21,7 @@
 * Each order will have a unique order ID for records. Every new customer account will also have a unique customer ID generated.
 
 
-###CUSTOMERS: 
+### CUSTOMERS: 
 
 * Once the user has placed an order, a shipping label will be generated with their respective address to ship to. 
 * The users shall be able to create accounts for orders and store personal information. 
@@ -108,4 +108,4 @@
 
 
 
-##NONFUNCTIONAL REQUIREMENTS (Not required, but desired)
+## NONFUNCTIONAL REQUIREMENTS (Not required, but desired)
