@@ -4,6 +4,7 @@
 					
 </p>
 ## SEE-FOOD REQUIREMENTS: 
+
 * Web project
 * Webcam
 * label printer
@@ -12,7 +13,7 @@
 ## DESCRIPTION:
 
 
-###VENDORS:
+### VENDORS:
     
 * The website will allow users to view live seafood products via live feed camera for them to choose for purchase.
 * We will be able to update current animals in stock when new products are in stock and/or when they are out of stock.
@@ -21,7 +22,7 @@
 * Each order will have a unique order ID for records. Every new customer account will also have a unique customer ID generated.
 
 
-###CUSTOMERS: 
+### CUSTOMERS: 
 
 * Once the user has placed an order, a shipping label will be generated with their respective address to ship to. 
 * The users shall be able to create accounts for orders and store personal information. 
@@ -35,7 +36,8 @@
 
 ###Seafood (Crustaceans) live feed online market.
 
-##FUNCTIONAL REQUIREMENTS (!!!REQUIRED!!!): 
+##FUNCTIONAL REQUIREMENTS (!!!REQUIRED!!!):
+
 * User(s) shall be able to view live seafood in tanks via live feed.
      *Live feed: web cameras
 
@@ -108,4 +110,4 @@
 
 
 
-##NONFUNCTIONAL REQUIREMENTS (Not required, but desired)
+## NONFUNCTIONAL REQUIREMENTS (Not required, but desired)
