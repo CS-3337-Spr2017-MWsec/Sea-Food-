@@ -1,0 +1,12 @@
+package Models;
+
+public class CustomerBean {
+	String firstName;
+	String lastName;
+	String username;
+	String password;
+	String address;
+	String number;
+	String email;
+	
+}
