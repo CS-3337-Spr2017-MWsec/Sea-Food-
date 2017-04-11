@@ -4,11 +4,6 @@
 # But do not Ignore these files...
 !.gitignore
 
-!!SeeFoodWorkspace
-
-
-
-!SeeFoodWorkspace/See-Food/src/**
 
 !*.txt
 !*.md
