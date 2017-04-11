@@ -1,12 +1,12 @@
 <?php
 
-$mysql_hostname = "localhost";
+$mysql_hostname = "cs3.calstatela.edu";
 
-$mysql_user = "root";
+$mysql_user = "cs3220stu101";
 
-$mysql_password = "";
+$mysql_password = "5gXHI4P5";
 
-$mysql_database = "registration";
+$mysql_database = "member";
 
 $prefix = "";
 
