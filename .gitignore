@@ -4,9 +4,10 @@
 # But do not Ignore these files...
 !.gitignore
 
-!SeeFoodWorkspace_
 !SeeFoodWorkspace
-!SeeFoodWorkspace_\See-Food\**
+!SeeFoodWorkspace\See-Food
+!SeeFoodWorkspace_\See-Food\src
+!SeeFoodWorkspace_\See-Food\WebContent
 
 
 
