@@ -16,6 +16,8 @@ public class Inventory extends Application {
 		BorderPane bPane = new BorderPane();
 		bPane.setPadding(new Insets(20, 20, 20, 20));
 		Button Inventory = new Button("Inventory");
+		Button Orders = new Button("Orders");
+		bPane.setTop(Orders);
 		bPane.setBottom(Inventory);
 		Scene scene = new Scene (bPane, 400,400);
 		primaryStage.setScene(scene);
