@@ -8,7 +8,12 @@
 
 !See-Food_Website/**
 
+!Inventory
 
+# Eclipse
+.classpath
+.project
+.settings/
 
 
 
