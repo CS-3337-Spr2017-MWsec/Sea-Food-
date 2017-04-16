@@ -1,4 +1,4 @@
-package cs3337;
+package models;
 
 public class ProductBean {
 
