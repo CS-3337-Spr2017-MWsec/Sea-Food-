@@ -18,7 +18,7 @@ public class Inventory extends Application {
 		Button Inventory = new Button("Inventory");
 		Button Orders = new Button("Orders");
 		bPane.setTop(Orders);
-		bPane.setBottom(Inventory);
+		bPane.setTop(Inventory);
 		Scene scene = new Scene (bPane, 400,400);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("See-Food ");
