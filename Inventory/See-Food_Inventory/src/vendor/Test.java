@@ -55,11 +55,14 @@ public class Test {
 		System.out.println("New product has been added\n");
 
 		System.out.println("ID\tName\tPrice\n");
+
 		for (int i = 0; i < products.size(); i++) {
+			double value = products.get(i).getPrice();
 			System.out.print(products.get(i).getId() + "\t");
 			System.out.print(products.get(i).getName() + "\t");
-		//	System.out.print(products.get(i).getPrice() + "\t" + "\n");
-		System.out.printf("%.2f", products.get(i).getName());
+			// System.out.print(products.get(i).getPrice() + "\t" + "\n");
+			System.out.printf("%.2f", value);
+			System.out.print("\t\n");
 		}
 	}
 
@@ -71,9 +74,12 @@ public class Test {
 
 		System.out.println("ID\tName\tPrice\n");
 		for (int i = 0; i < products.size(); i++) {
+			double value = products.get(i).getPrice();
 			System.out.print(products.get(i).getId() + "\t");
 			System.out.print(products.get(i).getName() + "\t");
-			System.out.print(products.get(i).getPrice() + "\t" + "\n");
+			//System.out.print(products.get(i).getPrice() + "\t" + "\n");
+			System.out.printf("%.2f", value);
+			System.out.print("\t\n");
 		}
 
 	}
@@ -155,7 +161,6 @@ public class Test {
 
 		Scanner scanner = new Scanner(System.in);
 
-
 		int counter = 0;
 
 		System.out.println("enter Product Name");
@@ -186,7 +191,7 @@ public class Test {
 
 		Scanner scanner = new Scanner(System.in);
 
-		int option=0;
+		int option = 0;
 		int id;
 		String name;
 		Double price;
@@ -194,13 +199,11 @@ public class Test {
 		ArrayList<Test> products = new ArrayList<Test>();
 		// products.add(new Product (1, "red lobster", 20.00));
 
-		Test newProduct = new Test(1, "lobster", 20.00);
+		Test newProduct = new Test(1, "lobster", 20.69);
 		products.add(newProduct);
 
-
-
 		// option = Integer.parseInt(scanner.nextLine());
-		
+
 		while (option != 4) {
 			System.out.println("Enter menu option ");
 			System.out.println("1: Add");
@@ -208,11 +211,11 @@ public class Test {
 			System.out.println("3: Delete ");
 			System.out.println("4: Exit");
 			option = checkDigit();
-			if (option == 1) {// need to check next available space if user deleted something
+			if (option == 1) {// need to check next available space if user
+								// deleted something
 
 				// id = Integer.parseInt(scanner.nextLine());
 				id = products.size() + 1;
-			
 
 				// name = scanner.nextLine();
 				name = checkName();
@@ -225,10 +228,9 @@ public class Test {
 
 			else if (option == 2) { // edits designated id
 
-		
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
-			
+
 				// name = scanner.nextLine();
 				name = checkName();
 
@@ -241,10 +243,10 @@ public class Test {
 			else if (option == 3) {
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
-				deleteProduct(id,products);
-					// id = Integer.parseInt(scanner.nextLine());
+				deleteProduct(id, products);
+				// id = Integer.parseInt(scanner.nextLine());
 			}
-		
+
 			// option = Integer.parseInt(scanner.nextLine());
 		}
 		System.out.println("goodbye");
