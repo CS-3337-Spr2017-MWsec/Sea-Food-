@@ -1,6 +1,7 @@
 package vendor;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Test {
 	int id;
@@ -77,7 +78,7 @@ public class Test {
 			double value = products.get(i).getPrice();
 			System.out.print(products.get(i).getId() + "\t");
 			System.out.print(products.get(i).getName() + "\t");
-			//System.out.print(products.get(i).getPrice() + "\t" + "\n");
+			// System.out.print(products.get(i).getPrice() + "\t" + "\n");
 			System.out.printf("%.2f", value);
 			System.out.print("\t\n");
 		}
@@ -126,33 +127,37 @@ public class Test {
 	}
 
 	public static double checkDouble() {
-		String id;
+		String price;
 		Scanner scanner = new Scanner(System.in);
-		int number = 0;
+		double number = 0;
 
 		int counter = 0;
-
+		final String regExp = "[0-9]+([,.][0-9]{1,2})?";
+		final Pattern pattern = Pattern.compile(regExp);
 		System.out.println("enter a price");
-		id = scanner.nextLine();
+		price = scanner.nextLine();
 
-		int length = id.length();
+		int length = price.length();
 		boolean exit = true;
 		while (exit != false) {
 
 			// if (Character.isDigit(id.charAt(counter))&& length!=0)
-			if (length == 0 || !Character.isDigit(id.charAt(counter))) {
+		
+
+			if (price.matches(regExp) == false || length == 0) {
+
 				System.out.println("Enter a valid number");
-				id = scanner.nextLine();
+				price = scanner.nextLine();
 				counter = 0;
-				length = id.length();
+				length = price.length();
 			} else if (length - 1 <= counter) {
 				exit = false;
 			} else {
 				counter++;
 			}
 		}
-
-		number = Integer.parseInt(id);
+		number =Double.parseDouble(price);
+	
 		return number;
 	}
 
