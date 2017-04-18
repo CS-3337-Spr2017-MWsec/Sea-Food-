@@ -58,7 +58,8 @@ public class Test {
 		for (int i = 0; i < products.size(); i++) {
 			System.out.print(products.get(i).getId() + "\t");
 			System.out.print(products.get(i).getName() + "\t");
-			System.out.print(products.get(i).getPrice() + "\t" + "\n");
+		//	System.out.print(products.get(i).getPrice() + "\t" + "\n");
+		System.out.printf("%.2f", products.get(i).getName());
 		}
 	}
 
@@ -185,7 +186,7 @@ public class Test {
 
 		Scanner scanner = new Scanner(System.in);
 
-		int option;
+		int option=0;
 		int id;
 		String name;
 		Double price;
@@ -196,17 +197,18 @@ public class Test {
 		Test newProduct = new Test(1, "lobster", 20.00);
 		products.add(newProduct);
 
-		System.out.println("Enter menu option ");
-		System.out.println("1: Add");
-		System.out.println("2: Edit");
-		System.out.println("3: Delete ");
-		System.out.println("4: Exit");
+
 
 		// option = Integer.parseInt(scanner.nextLine());
-		option = checkDigit();
+		
 		while (option != 4) {
-
-			if (option == 1) {
+			System.out.println("Enter menu option ");
+			System.out.println("1: Add");
+			System.out.println("2: Edit");
+			System.out.println("3: Delete ");
+			System.out.println("4: Exit");
+			option = checkDigit();
+			if (option == 1) {// need to check next available space if user deleted something
 
 				// id = Integer.parseInt(scanner.nextLine());
 				id = products.size() + 1;
@@ -242,8 +244,7 @@ public class Test {
 				deleteProduct(id,products);
 					// id = Integer.parseInt(scanner.nextLine());
 			}
-			System.out.println("Enter an option");
-			option = checkDigit();
+		
 			// option = Integer.parseInt(scanner.nextLine());
 		}
 		System.out.println("goodbye");
