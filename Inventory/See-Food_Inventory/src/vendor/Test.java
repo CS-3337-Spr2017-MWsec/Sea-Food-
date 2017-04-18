@@ -196,9 +196,9 @@ public class Test {
 		Scanner scanner = new Scanner(System.in);
 
 		int option = 0;
-		int id=0;
-		String name="";
-		Double price=0.0;
+		int id = 0;
+		String name = "";
+		Double price = 0.0;
 
 		ArrayList<Test> products = new ArrayList<Test>();
 		// products.add(new Product (1, "red lobster", 20.00));
@@ -217,9 +217,29 @@ public class Test {
 			option = checkDigit();
 			if (option == 1) {// need to check next available space if user
 								// deleted something
+				int counter = 0;
+				int test = 1;
+				boolean exit = true;
+				while (exit == true) {
+					System.out.println(products.get(counter).getId() + " " + counter);
+					if (products.get(counter).getId() > counter+1 && counter != 0) {
+						id = counter+1;
+						exit = false;
+					}
+
+					else if (counter >= products.size() - 1) {
+						id = products.size() + 1;
+						exit = false;
+					} else {
+						counter++;
+					}
+
+				}
+	
+
 
 				// id = Integer.parseInt(scanner.nextLine());
-				id = products.size() + 1;
+				// id = products.size() + 1;
 
 				// name = scanner.nextLine();
 				name = checkName();
@@ -231,9 +251,21 @@ public class Test {
 			}
 
 			else if (option == 2) { // edits designated id
-
+				int counter = 0;
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
+
+				boolean exit = true;
+				while (exit == true) {
+					if (products.get(counter).getId() == id)
+						exit = false;
+					else if (counter >= products.size() - 1) {
+						System.out.println("ID not available");
+						id = checkDigit();
+					} else {
+						counter++;
+					}
+				}
 
 				// name = scanner.nextLine();
 				name = checkName();
@@ -245,23 +277,21 @@ public class Test {
 			}
 
 			else if (option == 3) {
-				
-			
+				int counter = 0;
 				System.out.println("Enter Product ID: ");
-				boolean exit = true;
 				id = checkDigit();
-			/*	while (exit == true) {
-					System.out.println(products.indexOf(id));
-					if (products.contains(id) == true) {
-						System.out.println("contains");
+				boolean exit = true;
+				while (exit == true) {
+					if (products.get(counter).getId() == id)
 						exit = false;
-					} else {
-						System.out.println("no");
+					else if (counter >= products.size() - 1) {
+						System.out.println("ID not available");
 						id = checkDigit();
+					} else {
+						counter++;
 					}
-				
-					// id = Integer.parseInt(scanner.nextLine());
-				}*/
+				}
+
 				deleteProduct(id, products);
 			}
 			// option = Integer.parseInt(scanner.nextLine());
