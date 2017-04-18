@@ -132,8 +132,8 @@ public class Test {
 		double number = 0;
 
 		int counter = 0;
-		final String regExp = "[0-9]+([,.][0-9]{1,2})?";
-		final Pattern pattern = Pattern.compile(regExp);
+		final String check = "[0-9]+([,.][0-9]{1,2})?";
+		final Pattern pattern = Pattern.compile(check);
 		System.out.println("enter a price");
 		price = scanner.nextLine();
 
@@ -142,9 +142,8 @@ public class Test {
 		while (exit != false) {
 
 			// if (Character.isDigit(id.charAt(counter))&& length!=0)
-		
 
-			if (price.matches(regExp) == false || length == 0) {
+			if (price.matches(check) == false || length == 0) {
 
 				System.out.println("Enter a valid number");
 				price = scanner.nextLine();
@@ -156,8 +155,8 @@ public class Test {
 				counter++;
 			}
 		}
-		number =Double.parseDouble(price);
-	
+		number = Double.parseDouble(price);
+
 		return number;
 	}
 
@@ -197,9 +196,9 @@ public class Test {
 		Scanner scanner = new Scanner(System.in);
 
 		int option = 0;
-		int id;
-		String name;
-		Double price;
+		int id=0;
+		String name="";
+		Double price=0.0;
 
 		ArrayList<Test> products = new ArrayList<Test>();
 		// products.add(new Product (1, "red lobster", 20.00));
@@ -246,12 +245,25 @@ public class Test {
 			}
 
 			else if (option == 3) {
+				
+			
 				System.out.println("Enter Product ID: ");
+				boolean exit = true;
 				id = checkDigit();
+			/*	while (exit == true) {
+					System.out.println(products.indexOf(id));
+					if (products.contains(id) == true) {
+						System.out.println("contains");
+						exit = false;
+					} else {
+						System.out.println("no");
+						id = checkDigit();
+					}
+				
+					// id = Integer.parseInt(scanner.nextLine());
+				}*/
 				deleteProduct(id, products);
-				// id = Integer.parseInt(scanner.nextLine());
 			}
-
 			// option = Integer.parseInt(scanner.nextLine());
 		}
 		System.out.println("goodbye");
