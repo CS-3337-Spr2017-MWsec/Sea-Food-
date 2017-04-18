@@ -7,12 +7,22 @@ public class Test {
 	int id;
 	String name;
 	double price;
+	String description;
+	double weight;
+	double length;
+	int stock;
 
-	public Test(int id, String name, double price) {
+	public Test(int id, String name, double price, String description, double weight, double length, int stock) {
 
 		this.id = id;
 		this.name = name;
 		this.price = price;
+		this.description = description;
+		this.weight = weight;
+		this.length = length;
+		this.stock = stock;
+
+		// weight, length, stock status (a boolean)
 
 		// System.out.println("in constructor");
 	}
@@ -42,6 +52,36 @@ public class Test {
 		this.price = price;
 	}
 
+	public String getDescsription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	public void setLength(double length) {
+		this.length = length;
+	}
+	
+	public int getStock () {
+		return stock;
+	}
+	public void setStock (int stock) {
+		this.stock =stock;
+	}
 	/*
 	 * public ProductAdd(int id, String name, double price) { super(id, name,
 	 * price);
@@ -49,37 +89,48 @@ public class Test {
 	 * }
 	 */
 
-	public static void addProduct(int id, String name, double price, ArrayList<Test> products) {
-		Test newProduct = new Test(id, name, price);
+	public static void addProduct(int id, String name, double price, String description, double weight, double length, int stock, ArrayList<Test> products) {
+		Test newProduct = new Test(id, name, price, description, weight, length,stock);
 		products.add(newProduct);
 
 		System.out.println("New product has been added\n");
 
-		System.out.println("ID\tName\tPrice\n");
+		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
 
 		for (int i = 0; i < products.size(); i++) {
 			double value = products.get(i).getPrice();
 			System.out.print(products.get(i).getId() + "\t");
 			System.out.print(products.get(i).getName() + "\t");
 			// System.out.print(products.get(i).getPrice() + "\t" + "\n");
-			System.out.printf("%.2f", value);
+			System.out.printf("%.2f", value); // price
+			System.out.print("\t" + products.get(i).getDescsription() + "\t\t");
+			System.out.printf("%.1f", products.get(i).getWeight());
+			System.out.print("\t");
+			System.out.printf("%.1f", products.get(i).getLength());
+
+			System.out.print("\t" + products.get(i).getStock());
 			System.out.print("\t\n");
 		}
 	}
 
-	public static void editProduct(int id, String name, double price, ArrayList<Test> products) {
-		Test edit = new Test(id, name, price);
+	public static void editProduct(int id, String name, double price, String description, double weight, double length, int stock, ArrayList<Test> products) {
+		Test edit = new Test(id, name, price, description, weight, length,stock);
 		products.set(id - 1, edit);
 
 		System.out.println("Product has been edited\n");
 
-		System.out.println("ID\tName\tPrice\n");
+		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
 		for (int i = 0; i < products.size(); i++) {
 			double value = products.get(i).getPrice();
 			System.out.print(products.get(i).getId() + "\t");
 			System.out.print(products.get(i).getName() + "\t");
 			// System.out.print(products.get(i).getPrice() + "\t" + "\n");
-			System.out.printf("%.2f", value);
+			System.out.printf("%.2f", value); // price
+			System.out.print("\t" + products.get(i).getDescsription() + "\t\t");
+			System.out.printf("%.1f", products.get(i).getWeight());
+			System.out.print("\t");
+			System.out.printf("%.1f", products.get(i).getLength());
+			System.out.print("\t" + products.get(i).getStock());
 			System.out.print("\t\n");
 		}
 
@@ -88,7 +139,7 @@ public class Test {
 	public static void deleteProduct(int id, ArrayList<Test> products) {
 		products.remove(id - 1);
 		System.out.println("Product has been removed");
-		System.out.println("ID\tName\tPrice\n");
+		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
 		for (int i = 0; i < products.size(); i++) {
 			System.out.print(products.get(i).getId() + "\t");
 			System.out.print(products.get(i).getName() + "\t");
@@ -194,16 +245,19 @@ public class Test {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-
+		String description = null;
 		int option = 0;
 		int id = 0;
 		String name = "";
 		Double price = 0.0;
+		double weight =0.0;
+		double length =0.0;
+		int stock =0;
 
 		ArrayList<Test> products = new ArrayList<Test>();
 		// products.add(new Product (1, "red lobster", 20.00));
 
-		Test newProduct = new Test(1, "lobster", 20.69);
+		Test newProduct = new Test(1, "lobster", 20.69, "yummy", 15,12,3);
 		products.add(newProduct);
 
 		// option = Integer.parseInt(scanner.nextLine());
@@ -216,28 +270,20 @@ public class Test {
 			System.out.println("4: Exit");
 			option = checkDigit();
 			if (option == 1) {// need to check next available space if user
-								// deleted something
-				int counter = 0;
-				int test = 1;
-				boolean exit = true;
-				while (exit == true) {
-					System.out.println(products.get(counter).getId() + " " + counter);
-					if (products.get(counter).getId() > counter+1 && counter != 0) {
-						id = counter+1;
-						exit = false;
-					}
-
-					else if (counter >= products.size() - 1) {
-						id = products.size() + 1;
-						exit = false;
-					} else {
-						counter++;
-					}
-
-				}
-	
-
-
+				/*
+				 * // deleted something int counter = 0; int test = 1; boolean
+				 * exit = true; while (exit == true) {
+				 * System.out.println(products.get(counter).getId() + " " +
+				 * counter); if (products.get(counter).getId() > counter+1 &&
+				 * counter != 0) { id = counter+1; exit = false; }
+				 * 
+				 * else if (counter >= products.size() - 1) { id =
+				 * products.size() + 1; exit = false; } else { counter++; }
+				 * 
+				 * }
+				 */
+				System.out.println("enter new ID");
+				id = checkDigit();
 				// id = Integer.parseInt(scanner.nextLine());
 				// id = products.size() + 1;
 
@@ -245,27 +291,31 @@ public class Test {
 				name = checkName();
 
 				// price = Double.parseDouble(scanner.nextLine());
+			
 				price = checkDouble();
-				addProduct(id, name, price, products);
+				System.out.println("enter a description");
+				description = scanner.nextLine();
+				System.out.print("weight ");
+				weight = checkDouble();
+				System.out.print("length ");
+				length = checkDouble();
+				System.out.print("stock ");
+				stock = checkDigit();
+				addProduct(id, name, price, description, weight, length, stock, products);
 
 			}
 
 			else if (option == 2) { // edits designated id
-				int counter = 0;
+
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
-
-				boolean exit = true;
-				while (exit == true) {
-					if (products.get(counter).getId() == id)
-						exit = false;
-					else if (counter >= products.size() - 1) {
-						System.out.println("ID not available");
-						id = checkDigit();
-					} else {
-						counter++;
-					}
-				}
+				/*
+				 * int counter = 0; boolean exit = true; while (exit == true) {
+				 * if (products.get(counter).getId() == id) exit = false; else
+				 * if (counter >= products.size() - 1) {
+				 * System.out.println("ID not available"); id = checkDigit(); }
+				 * else { counter++; } }
+				 */
 
 				// name = scanner.nextLine();
 				name = checkName();
@@ -273,24 +323,25 @@ public class Test {
 				price = checkDouble();
 				// price = Double.parseDouble(scanner.nextLine());
 				// products.set(id, name,price);
-				editProduct(id, name, price, products);
+				System.out.println("enter a description");
+				description = scanner.nextLine();
+				weight = checkDouble();
+				length = checkDouble();
+				stock = checkDigit();
+				editProduct(id, name, price, description, weight, length, stock, products);
 			}
 
 			else if (option == 3) {
-				int counter = 0;
+
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
-				boolean exit = true;
-				while (exit == true) {
-					if (products.get(counter).getId() == id)
-						exit = false;
-					else if (counter >= products.size() - 1) {
-						System.out.println("ID not available");
-						id = checkDigit();
-					} else {
-						counter++;
-					}
-				}
+				/*
+				 * boolean exit = true; int counter = 0; while (exit == true) {
+				 * if (products.get(counter).getId() == id) exit = false; else
+				 * if (counter >= products.size() - 1) {
+				 * System.out.println("ID not available"); id = checkDigit(); }
+				 * else { counter++; } }
+				 */
 
 				deleteProduct(id, products);
 			}
