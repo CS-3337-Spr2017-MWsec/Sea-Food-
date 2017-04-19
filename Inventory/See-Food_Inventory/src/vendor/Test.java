@@ -75,12 +75,13 @@ public class Test {
 	public void setLength(double length) {
 		this.length = length;
 	}
-	
-	public int getStock () {
+
+	public int getStock() {
 		return stock;
 	}
-	public void setStock (int stock) {
-		this.stock =stock;
+
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 	/*
 	 * public ProductAdd(int id, String name, double price) { super(id, name,
@@ -89,8 +90,42 @@ public class Test {
 	 * }
 	 */
 
-	public static void addProduct(int id, String name, double price, String description, double weight, double length, int stock, ArrayList<Test> products) {
-		Test newProduct = new Test(id, name, price, description, weight, length,stock);
+	public static int findNextID(ArrayList<Test> products) {
+		int id = 0;
+		int i = products.size() - 1;
+		int total = 0;
+		int sum = 0;
+		if (products.size() < products.get(i).getId()) {
+			total = (products.size()) * (products.size() + 1) / 2;
+			for (int k = 0; k < products.size() - 1; k++) {
+				sum += products.get(k).getId();
+			}
+			if (products.get(products.size() - 1).getId() < total - sum) {
+				 total = total -sum;
+				 int counter =0;
+				while(id==0) {
+					if (total-counter!= products.get(counter).getId()) {
+						id = counter;
+					}
+					total++;
+					counter++;
+				}
+				
+				
+			} else {
+				id = total - sum;
+			}
+		} else {
+			id = products.size() + 1;
+
+		}
+
+		return id;
+	}
+
+	public static void addProduct(int id, String name, double price, String description, double weight, double length,
+			int stock, ArrayList<Test> products) {
+		Test newProduct = new Test(id, name, price, description, weight, length, stock);
 		products.add(newProduct);
 
 		System.out.println("New product has been added\n");
@@ -113,8 +148,9 @@ public class Test {
 		}
 	}
 
-	public static void editProduct(int id, String name, double price, String description, double weight, double length, int stock, ArrayList<Test> products) {
-		Test edit = new Test(id, name, price, description, weight, length,stock);
+	public static void editProduct(int id, String name, double price, String description, double weight, double length,
+			int stock, ArrayList<Test> products) {
+		Test edit = new Test(id, name, price, description, weight, length, stock);
 		products.set(id - 1, edit);
 
 		System.out.println("Product has been edited\n");
@@ -185,7 +221,6 @@ public class Test {
 		int counter = 0;
 		final String check = "[0-9]+([,.][0-9]{1,2})?";
 		final Pattern pattern = Pattern.compile(check);
-		System.out.println("enter a price");
 		price = scanner.nextLine();
 
 		int length = price.length();
@@ -250,56 +285,55 @@ public class Test {
 		int id = 0;
 		String name = "";
 		Double price = 0.0;
-		double weight =0.0;
-		double length =0.0;
-		int stock =0;
+		double weight = 0.0;
+		double length = 0.0;
+		int stock = 0;
 
 		ArrayList<Test> products = new ArrayList<Test>();
 		// products.add(new Product (1, "red lobster", 20.00));
 
-		Test newProduct = new Test(1, "lobster", 20.69, "yummy", 15,12,3);
+		Test newProduct = new Test(1, "lobster", 20.69, "yummy", 15, 12, 3);
+		Test newProduct2 = new Test(3, "lobster", 20.69, "yummy", 15, 12, 3);
+		Test newProduct3 = new Test(2, "lobster", 20.69, "yummy", 15, 12, 3);
 		products.add(newProduct);
+		products.add(newProduct2);
+		products.add(newProduct3);
 
 		// option = Integer.parseInt(scanner.nextLine());
 
 		while (option != 4) {
+			Collections.sort(products, new Comparator<Test>() { // sorts
+				public int compare(Test a, Test b) {
+					return Integer.valueOf(a.id).compareTo(b.id);
+				}
+			});
+
 			System.out.println("Enter menu option ");
 			System.out.println("1: Add");
 			System.out.println("2: Edit");
 			System.out.println("3: Delete ");
 			System.out.println("4: Exit");
+
 			option = checkDigit();
 			if (option == 1) {// need to check next available space if user
-				/*
-				 * // deleted something int counter = 0; int test = 1; boolean
-				 * exit = true; while (exit == true) {
-				 * System.out.println(products.get(counter).getId() + " " +
-				 * counter); if (products.get(counter).getId() > counter+1 &&
-				 * counter != 0) { id = counter+1; exit = false; }
-				 * 
-				 * else if (counter >= products.size() - 1) { id =
-				 * products.size() + 1; exit = false; } else { counter++; }
-				 * 
-				 * }
-				 */
-				System.out.println("enter new ID");
-				id = checkDigit();
+				id = 0;
 				// id = Integer.parseInt(scanner.nextLine());
 				// id = products.size() + 1;
 
 				// name = scanner.nextLine();
+				id = findNextID(products);
 				name = checkName();
 
 				// price = Double.parseDouble(scanner.nextLine());
-			
+				System.out.println("enter a price");
 				price = checkDouble();
 				System.out.println("enter a description");
 				description = scanner.nextLine();
-				System.out.print("weight ");
+				System.out.print("Enter weight ");
 				weight = checkDouble();
-				System.out.print("length ");
+				System.out.print("Enter length ");
 				length = checkDouble();
-				System.out.print("stock ");
+				System.out.print("Enter stock ");
 				stock = checkDigit();
 				addProduct(id, name, price, description, weight, length, stock, products);
 
@@ -320,13 +354,15 @@ public class Test {
 				// name = scanner.nextLine();
 				name = checkName();
 
+				System.out.println("enter a price");
 				price = checkDouble();
-				// price = Double.parseDouble(scanner.nextLine());
-				// products.set(id, name,price);
 				System.out.println("enter a description");
 				description = scanner.nextLine();
+				System.out.print("Enter weight ");
 				weight = checkDouble();
+				System.out.print("Enter length ");
 				length = checkDouble();
+				System.out.print("Enter stock ");
 				stock = checkDigit();
 				editProduct(id, name, price, description, weight, length, stock, products);
 			}
