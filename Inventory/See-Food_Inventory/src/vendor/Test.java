@@ -92,29 +92,18 @@ public class Test {
 
 	public static int findNextID(ArrayList<Test> products) {
 		int id = 0;
-		int i = products.size() - 1;
-		int total = 0;
-		int sum = 0;
-		if (products.size() < products.get(i).getId()) {
-			total = (products.size()) * (products.size() + 1) / 2;
-			for (int k = 0; k < products.size() - 1; k++) {
-				sum += products.get(k).getId();
-			}
-			if (products.get(products.size() - 1).getId() < total - sum) {
-				 total = total -sum;
-				 int counter =0;
-				while(id==0) {
-					if (total-counter!= products.get(counter).getId()) {
-						id = counter;
-					}
-					total++;
+		int size = products.size() - 1;
+		if (products.size() < products.get(size).getId()) {
+			int counter = 0;
+			while (id == 0) {// if there are 2 missing ids, finds the nearest
+								// one
+				if (counter + 1 != products.get(counter).getId()) {
+					id = counter + 1;
+				} else {
 					counter++;
 				}
-				
-				
-			} else {
-				id = total - sum;
 			}
+
 		} else {
 			id = products.size() + 1;
 
@@ -173,7 +162,7 @@ public class Test {
 	}
 
 	public static void deleteProduct(int id, ArrayList<Test> products) {
-		products.remove(id - 1);
+		products.remove(id );
 		System.out.println("Product has been removed");
 		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
 		for (int i = 0; i < products.size(); i++) {
@@ -294,7 +283,7 @@ public class Test {
 
 		Test newProduct = new Test(1, "lobster", 20.69, "yummy", 15, 12, 3);
 		Test newProduct2 = new Test(3, "lobster", 20.69, "yummy", 15, 12, 3);
-		Test newProduct3 = new Test(2, "lobster", 20.69, "yummy", 15, 12, 3);
+		Test newProduct3 = new Test(5, "lobster", 20.69, "yummy", 15, 12, 3);
 		products.add(newProduct);
 		products.add(newProduct2);
 		products.add(newProduct3);
@@ -371,14 +360,24 @@ public class Test {
 
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
-				/*
-				 * boolean exit = true; int counter = 0; while (exit == true) {
-				 * if (products.get(counter).getId() == id) exit = false; else
-				 * if (counter >= products.size() - 1) {
-				 * System.out.println("ID not available"); id = checkDigit(); }
-				 * else { counter++; } }
-				 */
 
+				boolean exit = true;
+				int counter = 0;
+				while (exit == true) {// if there are 2 missing ids, finds the
+					System.out.println("id"+products.indexOf(id));
+					if (counter == products.size() || id > products.get(products.size() - 1).getId()) {
+						System.out.println("Invalid ID..");
+						id = checkDigit();
+						counter = 0;
+					} else if (id != products.get(counter).getId()) {
+						counter++;
+					} else {
+						id = counter;
+						exit = false;
+						
+					}
+				}
+			
 				deleteProduct(id, products);
 			}
 			// option = Integer.parseInt(scanner.nextLine());
