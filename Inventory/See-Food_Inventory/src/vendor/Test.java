@@ -113,22 +113,8 @@ public class Test {
 
 		System.out.println("New product has been added\n");
 
-		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
 
-		for (int i = 0; i < products.size(); i++) {
-			double value = products.get(i).getPrice();
-			System.out.print(products.get(i).getId() + "\t");
-			System.out.print(products.get(i).getName() + "\t");
-			// System.out.print(products.get(i).getPrice() + "\t" + "\n");
-			System.out.printf("%.2f", value); // price
-			System.out.print("\t" + products.get(i).getDescsription() + "\t\t");
-			System.out.printf("%.1f", products.get(i).getWeight());
-			System.out.print("\t");
-			System.out.printf("%.1f", products.get(i).getLength());
-
-			System.out.print("\t" + products.get(i).getStock());
-			System.out.print("\t\n");
-		}
+		
 	}
 
 	public static void editProduct(int id, String name, double price, String description, double weight, double length,
@@ -138,6 +124,17 @@ public class Test {
 
 		System.out.println("Product has been edited\n");
 
+
+
+	}
+
+	public static void deleteProduct(int id, ArrayList<Test> products) {
+		products.remove(id );
+		System.out.println("Product has been removed");
+	
+	}
+
+	public static void viewItems(ArrayList<Test> products ) {
 		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
 		for (int i = 0; i < products.size(); i++) {
 			double value = products.get(i).getPrice();
@@ -152,20 +149,9 @@ public class Test {
 			System.out.print("\t" + products.get(i).getStock());
 			System.out.print("\t\n");
 		}
-
+		
 	}
-
-	public static void deleteProduct(int id, ArrayList<Test> products) {
-		products.remove(id );
-		System.out.println("Product has been removed");
-		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
-		for (int i = 0; i < products.size(); i++) {
-			System.out.print(products.get(i).getId() + "\t");
-			System.out.print(products.get(i).getName() + "\t");
-			System.out.print(products.get(i).getPrice() + "\t" + "\n");
-		}
-	}
-
+	
 	public static int checkDigit() {
 		String id;
 		Scanner scanner = new Scanner(System.in);
@@ -319,7 +305,7 @@ public class Test {
 				boolean exit = true;
 				int counter = 0;
 				while (exit == true) {// if there are 2 missing ids, finds the
-					//System.out.println("id"+products.indexOf(id));
+				
 					if (counter == products.size() || id > products.get(products.size() - 1).getId()) {
 						System.out.println("Invalid ID..");
 						id = checkDigit();
@@ -375,6 +361,7 @@ public class Test {
 			
 				deleteProduct(id, products);
 			}
+			viewItems(products);
 			// option = Integer.parseInt(scanner.nextLine());
 		}
 		System.out.println("goodbye");
