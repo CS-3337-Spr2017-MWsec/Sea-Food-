@@ -83,12 +83,6 @@ public class Test {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	/*
-	 * public ProductAdd(int id, String name, double price) { super(id, name,
-	 * price);
-	 * 
-	 * }
-	 */
 
 	public static int findNextID(ArrayList<Test> products) {
 		int id = 0;
@@ -215,11 +209,7 @@ public class Test {
 		int length = price.length();
 		boolean exit = true;
 		while (exit != false) {
-
-			// if (Character.isDigit(id.charAt(counter))&& length!=0)
-
 			if (price.matches(check) == false || length == 0) {
-
 				System.out.println("Enter a valid number");
 				price = scanner.nextLine();
 				counter = 0;
@@ -249,7 +239,6 @@ public class Test {
 		boolean exit = true;
 		while (exit != false) {
 
-			// if (Character.isDigit(id.charAt(counter))&& length!=0)
 			if (length == 0 || !Character.isLetter(name.charAt(counter))) {
 				System.out.println("Enter a valid Name");
 				name = scanner.nextLine();
@@ -304,16 +293,9 @@ public class Test {
 			System.out.println("4: Exit");
 
 			option = checkDigit();
-			if (option == 1) {// need to check next available space if user
-				id = 0;
-				// id = Integer.parseInt(scanner.nextLine());
-				// id = products.size() + 1;
-
-				// name = scanner.nextLine();
+			if (option == 1) {// checks next available space to use
 				id = findNextID(products);
 				name = checkName();
-
-				// price = Double.parseDouble(scanner.nextLine());
 				System.out.println("enter a price");
 				price = checkDouble();
 				System.out.println("enter a description");
@@ -332,17 +314,7 @@ public class Test {
 
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
-				/*
-				 * int counter = 0; boolean exit = true; while (exit == true) {
-				 * if (products.get(counter).getId() == id) exit = false; else
-				 * if (counter >= products.size() - 1) {
-				 * System.out.println("ID not available"); id = checkDigit(); }
-				 * else { counter++; } }
-				 */
-
-				// name = scanner.nextLine();
 				name = checkName();
-
 				System.out.println("enter a price");
 				price = checkDouble();
 				System.out.println("enter a description");
