@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class Test {
-	int id;
+	public int id;
 	String name;
 	double price;
 	String description;
@@ -113,28 +113,24 @@ public class Test {
 
 		System.out.println("New product has been added\n");
 
-
-		
 	}
 
 	public static void editProduct(int id, String name, double price, String description, double weight, double length,
 			int stock, ArrayList<Test> products) {
 		Test edit = new Test(id, name, price, description, weight, length, stock);
-		products.set(id-1, edit);
+		products.set(id - 1, edit);
 
 		System.out.println("Product has been edited\n");
-
-
 
 	}
 
 	public static void deleteProduct(int id, ArrayList<Test> products) {
-		products.remove(id );
+		products.remove(id);
 		System.out.println("Product has been removed");
-	
+
 	}
 
-	public static void viewItems(ArrayList<Test> products ) {
+	public static void viewItems(ArrayList<Test> products) {
 		System.out.println("ID\tName\tPrice\tDescription\tWeight\tLength\tStock\n");
 		for (int i = 0; i < products.size(); i++) {
 			double value = products.get(i).getPrice();
@@ -149,9 +145,9 @@ public class Test {
 			System.out.print("\t" + products.get(i).getStock());
 			System.out.print("\t\n");
 		}
-		
+
 	}
-	
+
 	public static int checkDigit() {
 		String id;
 		Scanner scanner = new Scanner(System.in);
@@ -300,12 +296,11 @@ public class Test {
 
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
-				
 
 				boolean exit = true;
 				int counter = 0;
 				while (exit == true) {// if there are 2 missing ids, finds the
-				
+
 					if (counter == products.size() || id > products.get(products.size() - 1).getId()) {
 						System.out.println("Invalid ID..");
 						id = checkDigit();
@@ -313,16 +308,12 @@ public class Test {
 					} else if (id != products.get(counter).getId()) {
 						counter++;
 					} else {
-						//id = counter;
+						// id = counter;
 						exit = false;
-						
+
 					}
 				}
 
-				
-				
-				
-				
 				name = checkName();
 				System.out.println("enter a price");
 				price = checkDouble();
@@ -345,7 +336,7 @@ public class Test {
 				boolean exit = true;
 				int counter = 0;
 				while (exit == true) {// if there are 2 missing ids, finds the
-//					System.out.println("id"+products.indexOf(id));
+					// System.out.println("id"+products.indexOf(id));
 					if (counter == products.size() || id > products.get(products.size() - 1).getId()) {
 						System.out.println("Invalid ID..");
 						id = checkDigit();
@@ -355,10 +346,10 @@ public class Test {
 					} else {
 						id = counter;
 						exit = false;
-						
+
 					}
 				}
-			
+
 				deleteProduct(id, products);
 			}
 			viewItems(products);

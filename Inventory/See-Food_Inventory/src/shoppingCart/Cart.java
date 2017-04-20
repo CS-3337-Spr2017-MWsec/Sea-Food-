@@ -2,7 +2,11 @@ package shoppingCart;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
+
+import vendor.Test;
 
 public class Cart {
 	int id;
@@ -128,7 +132,7 @@ public class Cart {
 	public static int validID(int id, ArrayList<Cart> products) {
 		boolean exit = true;
 		int counter = 0;
-		id = checkDigit();
+		//id = checkDigit();
 		while (exit == true) {// if there are 2 missing ids, finds the
 			// System.out.println("id"+products.indexOf(id));
 			if (counter == products.size() || id > products.get(products.size() - 1).getId()) {
@@ -149,19 +153,25 @@ public class Cart {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int id = 4;
-		boolean exit= false;
+		int index =0;
 		ArrayList<Cart> products = new ArrayList<Cart>();
 		Cart product = new Cart(1, "fish", 3.060, 3);
 		Cart product1 = new Cart(2, "catfish", 4.060, 2);
 		products.add(product);
 		products.add(product1);
 		int selection = 0;
-		while (true) {
+		while (id!=0) {
+			Collections.sort(products, new Comparator<Cart>() { // sorts
+				public int compare(Cart a, Cart b) {
+					return Integer.valueOf(a.id).compareTo(b.id);
+				}
+			});
 			viewCart(products);
-			id = validID(id, products);	
-			System.out.println("Editing for " + products.get(id).getName());
-			System.out.println("Enter 1 to edit quantity or 2 to remove");
-			editCart(id, selection, products);
+			id = checkDigit(); //checks number
+			index = validID(id, products);	//checks valid id and grabs the index
+			System.out.println("Editing for " + products.get(index).getName());
+			System.out.println("Enter 1 to edit quantity or 2 to remove ");
+			editCart(index, selection, products);
 
 		}
 
