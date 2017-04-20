@@ -1,5 +1,6 @@
 package shoppingCart;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,7 +67,10 @@ public class Cart {
 			System.out.print("\n");
 
 		}
-		System.out.println("Total cost: "+ total );
+		//total = Math.round(total *100)/100;
+		DecimalFormat format = new DecimalFormat("#.##");
+		total = Double.valueOf(format.format(total));
+		System.out.println("Total cost: "+ total  + " " );
 		System.out.println("Enter product id to edit or 0 to exit ");
 	}
 
@@ -147,8 +151,8 @@ public class Cart {
 		int id = 4;
 		boolean exit= false;
 		ArrayList<Cart> products = new ArrayList<Cart>();
-		Cart product = new Cart(1, "fish", 3.06, 3);
-		Cart product1 = new Cart(2, "catfish", 4.06, 2);
+		Cart product = new Cart(1, "fish", 3.060, 3);
+		Cart product1 = new Cart(2, "catfish", 4.060, 2);
 		products.add(product);
 		products.add(product1);
 		int selection = 0;

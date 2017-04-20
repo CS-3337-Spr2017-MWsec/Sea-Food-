@@ -134,7 +134,7 @@ public class Test {
 	public static void editProduct(int id, String name, double price, String description, double weight, double length,
 			int stock, ArrayList<Test> products) {
 		Test edit = new Test(id, name, price, description, weight, length, stock);
-		products.set(id - 1, edit);
+		products.set(id-1, edit);
 
 		System.out.println("Product has been edited\n");
 
@@ -272,7 +272,7 @@ public class Test {
 
 		Test newProduct = new Test(1, "lobster", 20.69, "yummy", 15, 12, 3);
 		Test newProduct2 = new Test(3, "lobster", 20.69, "yummy", 15, 12, 3);
-		Test newProduct3 = new Test(5, "lobster", 20.69, "yummy", 15, 12, 3);
+		Test newProduct3 = new Test(2, "fish", 5.00, "salmon", 3, 6, 3);
 		products.add(newProduct);
 		products.add(newProduct2);
 		products.add(newProduct3);
@@ -314,6 +314,29 @@ public class Test {
 
 				System.out.println("Enter Product ID: ");
 				id = checkDigit();
+				
+
+				boolean exit = true;
+				int counter = 0;
+				while (exit == true) {// if there are 2 missing ids, finds the
+					//System.out.println("id"+products.indexOf(id));
+					if (counter == products.size() || id > products.get(products.size() - 1).getId()) {
+						System.out.println("Invalid ID..");
+						id = checkDigit();
+						counter = 0;
+					} else if (id != products.get(counter).getId()) {
+						counter++;
+					} else {
+						//id = counter;
+						exit = false;
+						
+					}
+				}
+
+				
+				
+				
+				
 				name = checkName();
 				System.out.println("enter a price");
 				price = checkDouble();
@@ -336,7 +359,7 @@ public class Test {
 				boolean exit = true;
 				int counter = 0;
 				while (exit == true) {// if there are 2 missing ids, finds the
-					System.out.println("id"+products.indexOf(id));
+//					System.out.println("id"+products.indexOf(id));
 					if (counter == products.size() || id > products.get(products.size() - 1).getId()) {
 						System.out.println("Invalid ID..");
 						id = checkDigit();
