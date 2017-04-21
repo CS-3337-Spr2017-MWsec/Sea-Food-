@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.CustomerBean;
+import models.ProductBean;
 
 //FOR REFERENCE.
 //@WebServlet(name = "controllers/LoginController", urlPatterns = { "/controllers/LoginController" })
@@ -41,6 +42,7 @@ public class LoginController extends HttpServlet {
 				
 				request.getSession().setAttribute("username", username);
 				request.getSession().setAttribute("listOfCustomers", listOfCustomers);
+				request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
 				
 				response.sendRedirect("SeeFoodController");
 			}
