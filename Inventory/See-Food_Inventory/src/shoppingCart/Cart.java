@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-import vendor.Test;
+
 
 public class Cart {
 	int id;
@@ -93,8 +93,9 @@ public class Cart {
 			Cart edit = new Cart(products.get(id).getId(), products.get(id).getName(), total, quantity);
 			products.set(id, edit);
 		} else if (selection == 2) {
-			products.remove(id);
 			System.out.println(products.get(id).getName() + " has been removed");
+			products.remove(id);
+		
 		}
 
 	}
@@ -124,7 +125,7 @@ public class Cart {
 				counter++;
 			}
 		}
-
+	//	scanner.close();
 		number = Integer.parseInt(id);
 		return number;
 	}
@@ -156,7 +157,7 @@ public class Cart {
 		int index =0;
 		ArrayList<Cart> products = new ArrayList<Cart>();
 		Cart product = new Cart(1, "fish", 3.060, 3);
-		Cart product1 = new Cart(2, "catfish", 4.060, 2);
+		Cart product1 = new Cart(3, "catfish", 4.060, 2);
 		products.add(product);
 		products.add(product1);
 		int selection = 0;

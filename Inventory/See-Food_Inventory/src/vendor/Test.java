@@ -175,6 +175,7 @@ public class Test {
 		}
 
 		number = Integer.parseInt(id);
+		//scanner.close();
 		return number;
 	}
 
@@ -203,7 +204,7 @@ public class Test {
 			}
 		}
 		number = Double.parseDouble(price);
-
+		//scanner.close();
 		return number;
 	}
 
@@ -232,7 +233,7 @@ public class Test {
 				counter++;
 			}
 		}
-
+		//scanner.close();
 		return name;
 
 	}
@@ -355,6 +356,7 @@ public class Test {
 			viewItems(products);
 			// option = Integer.parseInt(scanner.nextLine());
 		}
+		//scanner.close();
 		System.out.println("goodbye");
 	}
 
