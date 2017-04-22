@@ -53,7 +53,7 @@ public class ProductBean {
 	public boolean isDelete(){
 		return delete;
 	}
-	public void setDelete(Boolean delete){
+	public void setDelete(boolean delete){
 		this.delete = delete;
 	}
 }

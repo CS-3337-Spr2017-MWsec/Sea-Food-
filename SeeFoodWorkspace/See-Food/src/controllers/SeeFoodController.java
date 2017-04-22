@@ -21,15 +21,15 @@ public class SeeFoodController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 		
-		//TODO START: Provide admin permissions to these 2 users.
+		//listOfCustomers.
 		ArrayList<CustomerBean> listOfCustomers = new ArrayList<CustomerBean>();
 		
 		listOfCustomers.add(new CustomerBean("admin", "admin@fake.com", "abcd"));
 		listOfCustomers.add(new CustomerBean("admin2", "admin2@real.com", "1234"));
-		//TODO END: Provide admin permission to these 2 users.
 		
 		
-		//TODO START: Initialize standard products for demo purposes.
+		
+		//listOfProducts.
 		ArrayList<ProductBean> listOfProducts = new ArrayList<ProductBean>();
 		
 		//LOBSTERS.
@@ -72,35 +72,20 @@ public class SeeFoodController extends HttpServlet {
 				+ "name refers to the Chinookan peoples. Other vernacular names for the species include king salmon,\n"
 				+ "Quinnat salmon, spring salmon, and Tyee salmon.", 66));
 		
-//		int numberOfProducts = 0;
-//		
-//		for(ProductBean products: listOfProducts){
-//			numberOfProducts++;
-//		}
-//		
-//		getServletContext().setAttribute("numberOfProducts", numberOfProducts);
 		getServletContext().setAttribute("listOfProducts", listOfProducts);
-		//TODO END: Initialize standard products for demo purposes.
+		getServletContext().setAttribute("userProducts", new ArrayList<ProductBean>());
 		
-//		getServletContext().setAttribute("listOfCustomers", listOfCustomers);
+		getServletContext().setAttribute("listOfCustomers", listOfCustomers);
 	}
-	
-	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		@SuppressWarnings("unchecked")
 		ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) getServletContext().getAttribute("listOfCustomers");
 		
-		if(listOfCustomers == null){
-			request.getRequestDispatcher("/WEB-INF/SFSS/Homepage.jsp").forward(request, response);
-		}else{
-			request.setAttribute("listOfCustomers", listOfCustomers);
-			request.getRequestDispatcher("/WEB-INF/SFSS/Homepage.jsp").forward(request, response);			
-		}
+		request.setAttribute("listOfCustomers", listOfCustomers);
+		request.getRequestDispatcher("/WEB-INF/SFSS/Homepage.jsp").forward(request, response);			
 	}
 
-	
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

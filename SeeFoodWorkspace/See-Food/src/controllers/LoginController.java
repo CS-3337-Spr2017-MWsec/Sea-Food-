@@ -21,18 +21,22 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean logout = request.getParameter("logout") != null;
 		
+		@SuppressWarnings("unchecked")
+		ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) getServletContext().getAttribute("listOfCustomers");
+		
 		if(logout){
 			request.getSession().invalidate();
 		}
 		
+		getServletContext().setAttribute("listOfCustomers", listOfCustomers);
 		request.getRequestDispatcher("/WEB-INF/SFSS/Homepage.jsp").forward(request, response);
 	}
 	
+	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		@SuppressWarnings("unchecked")
 		ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) getServletContext().getAttribute("listOfCustomers");
 		CustomerBean customer = null;
 		
@@ -42,7 +46,8 @@ public class LoginController extends HttpServlet {
 				
 				request.getSession().setAttribute("username", username);
 				request.getSession().setAttribute("listOfCustomers", listOfCustomers);
-				request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
+//				request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
+				request.getServletContext().setAttribute("userProducts", (ArrayList<ProductBean>) getServletContext().getAttribute("userProducts")); 
 				
 				response.sendRedirect("SeeFoodController");
 			}
