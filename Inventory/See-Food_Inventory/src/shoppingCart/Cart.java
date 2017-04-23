@@ -158,8 +158,10 @@ public class Cart {
 		ArrayList<Cart> products = new ArrayList<Cart>();
 		Cart product = new Cart(1, "fish", 3.060, 3);
 		Cart product1 = new Cart(3, "catfish", 4.060, 2);
+		Cart product2 = new Cart(5, "salmon", 8.00, 4);
 		products.add(product);
 		products.add(product1);
+		products.add(product2);
 		int selection = 0;
 		while (id!=0) {
 			Collections.sort(products, new Comparator<Cart>() { // sorts
