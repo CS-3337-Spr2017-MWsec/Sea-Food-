@@ -17,7 +17,7 @@
 <body>
 	<c:choose>
 		<c:when test="${empty billing}">
-			<h3>Creating a new SFSS family member...!</h3>
+			<h3>A new SFSS family member!</h3>
 			<h4>We just need your:</h4>
 			<form action="RegistrationController" method="POST">
 				Username: <input type="text" name="username" placeholder="Enter your username"/><br/>
