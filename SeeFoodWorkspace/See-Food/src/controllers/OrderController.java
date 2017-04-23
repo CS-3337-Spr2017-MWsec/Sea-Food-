@@ -21,25 +21,25 @@ public class OrderController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//TEST.
-//		@SuppressWarnings("unchecked")
-//		ArrayList<ProductBean> userProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("userProducts");
-//		
-//		//TODO Test if these are actually required.
-//		Integer itemID = Integer.valueOf(request.getParameter("id"));
-//		Integer numOfItems = Integer.parseInt(request.getParameter("itemQuantity")); //User amount in ShoppingCart.jsp.
-////		String desc = request.getParameter("desc");
-//		
-//		for(ProductBean itemInCart: userProducts){
-//			if(itemID.equals(itemInCart.getId())){
-//				itemInCart.setQuantity(numOfItems);
-//			}
-//		}
-//		
-//		//TESTING.
-//		if(request.getParameter("username") == null){
-//			request.setAttribute("billing", true);
-//			response.sendRedirect("RegistrationController");
-//		}
+		@SuppressWarnings("unchecked")
+		ArrayList<ProductBean> userProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("userProducts");
+		
+		//TODO Test if these are actually required.
+		Integer itemID = Integer.valueOf(request.getParameter("id"));
+		Integer numOfItems = Integer.parseInt(request.getParameter("itemQuantity")); //User amount in ShoppingCart.jsp.
+		String desc = request.getParameter("desc");
+		
+		for(ProductBean itemInCart: userProducts){
+			if(itemID.equals(itemInCart.getId())){
+				itemInCart.setQuantity(numOfItems);
+			}
+		}
+		
+		//TESTING.
+		if(request.getParameter("username") == null){
+			request.setAttribute("billing", true);
+			response.sendRedirect("RegistrationController");
+		}
 		
 		doGet(request, response);
 	}

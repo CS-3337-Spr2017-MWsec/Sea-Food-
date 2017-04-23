@@ -79,8 +79,8 @@ public class RegistrationController extends HttpServlet {
 			
 			@SuppressWarnings("unchecked")
 			ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) getServletContext().getAttribute("listOfCustomers");
-			@SuppressWarnings("unchecked")
-			ArrayList<ProductBean> userProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("userProducts");
+//			@SuppressWarnings("unchecked")
+//			ArrayList<ProductBean> userProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("userProducts");
 			
 			boolean check = true;
 			

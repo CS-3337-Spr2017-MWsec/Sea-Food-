@@ -10,14 +10,18 @@ public class ProductBean {
 	String description;
 	boolean delete;
 	Double price;
+	Double weight;
+	Double length;
 	
-	public ProductBean(String name, String description, int stock, double price){
+	public ProductBean(String name, String description, int stock, double price, double weight, double length){
 		this.id = idCount++;
 		this.name = name;
 		this.description = description;
 		this.stock = stock;
 		this.delete = false;
 		this.price = price;
+		this.weight = weight;
+		this.length = length;
 	}
 	
 	public Integer getId(){
@@ -64,5 +68,19 @@ public class ProductBean {
 	}
 	public void setPrice(Double price){
 		this.price = price;
+	}
+	
+	public Double getWeight(){
+		return weight;
+	}
+	public void setWeight(Double weight){
+		this.weight = weight;
+	}
+	
+	public Double getLength(){
+		return length;
+	}
+	public void setLength(Double length){
+		this.length = length;
 	}
 }
