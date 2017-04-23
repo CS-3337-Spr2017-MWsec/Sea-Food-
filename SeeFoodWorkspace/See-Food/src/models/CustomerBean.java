@@ -1,14 +1,16 @@
 package models;
 
 public class CustomerBean {
-	String firstName;
-	String lastName;
 	String username;
 	String password;
+	String email;
+
+	String firstName;
+	String lastName;
 	String shippingAddress;
 	String number;
-	String email;
 	String billingAddress;
+	Integer card;
 	//TODO Finish list of properties.
 	
 	public CustomerBean(String username, String email, String password){
@@ -79,5 +81,12 @@ public class CustomerBean {
 	
 	public void setBillingAddress(String billingAddress){
 		this.billingAddress = billingAddress;
+	}
+	
+	public Integer getCard(){
+		return card;
+	}
+	public void setCard(Integer card){
+		this.card = card;
 	}
 }

@@ -47,7 +47,8 @@
 		<div style="text-align:left;">
 			<h2><strong>${product.name}</strong></h2><br/>
 			<h4><em>*${product.description}</em></h4><br/>
-			Amount in stock: ${product.stock}&emsp;<a href="ShoppingCartController?id=${product.id}">Add to Shopping Cart</a>
+			Amount in stock: ${product.stock}&emsp;<a href="ShoppingCartController?id=${product.id}">Add to Shopping Cart</a>&emsp;
+			Price per pound: <em>$${product.price}</em>
 		</div>
 		<hr/>
 	</c:forEach>

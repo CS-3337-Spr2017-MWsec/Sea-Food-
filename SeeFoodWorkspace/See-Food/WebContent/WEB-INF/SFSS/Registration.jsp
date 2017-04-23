@@ -15,14 +15,34 @@
 <title>Registration</title>
 </head>
 <body>
-	<h3>Creating a new SFSS family member...!</h3>
-	<h4>We just need your:</h4>
-	<form action="RegistrationController" method="POST">
-		Username: <input type="text" name="username" placeholder="Enter your username"/><br/>
-		Email: <input type="text" name="email" placeholder="Enter your email"/><br/>
-		Password: <input type="password" name="password1"/><br/>
-		Re-enter your password: <input type="password" name="password2"/><br/>
-		<input type="submit" value="Submit"/>
-	</form>
+	<c:choose>
+		<c:when test="${empty billing}">
+			<h3>Creating a new SFSS family member...!</h3>
+			<h4>We just need your:</h4>
+			<form action="RegistrationController" method="POST">
+				Username: <input type="text" name="username" placeholder="Enter your username"/><br/>
+				Email: <input type="text" name="email" placeholder="Enter your email"/><br/>
+				Password: <input type="password" name="password1"/><br/>
+				Re-enter your password: <input type="password" name="password2"/><br/>
+				<input type="submit" value="Submit"/>
+			</form>
+		</c:when>
+		
+		<c:otherwise>
+			<c:if test="${not empty username}">
+				<h3>Oh? So you want these products?</h3>
+				<h4>In order for us to deliver these to your door, we'll need:</h4>
+				<form action="RegistrationController" method="POST">
+					First name: <input type="text" name="firstName"><br/>
+					Last name: <input type="text" name="lastName"><br/>
+					Shipping address: <input type="text" name="shippingAddress"><br/>
+					Phone number: <input type="text" name="number"><br/>
+					Billing address: <input type="text" name="billingAddress"><br/>
+					Card number: <input type="text" name="card"><br/>
+					<input type="submit" value="Submit">
+				</form>
+			</c:if>
+		</c:otherwise>
+	</c:choose>
 </body>
 </html>

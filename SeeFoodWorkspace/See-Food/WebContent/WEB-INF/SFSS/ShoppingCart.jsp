@@ -45,38 +45,53 @@
 									<em>${product.description}</em><br/>
 									<!-- Amount in cart: ${product.quantity}<br/> -->
 								</s>
-									<a href="ToggleRemoveController?id=${product.id}">Do NOT delete</a><br/>
+									<a href="ToggleRemoveController?id=${product.id}">Do NOT delete</a>&emsp;
+									<a href="RemoveProductsController">Remove selected products</a><br/>
 								<hr/>
 							</c:when>
 							
 							<c:otherwise> <!-- Otherwise, remove from removal. -->
 								<strong>${product.name}</strong><br/>
 								<em>${product.description}</em><br/>
-								<!-- Amount in cart: ${product.stock}&emsp;Edit stock: <input type="number" name="stock"><br/> -->
-									<form action="ShoppingCartController">
-									Amount in cart:
-										<select name="stock">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select>
+									<form action="OrderController" method="POST">
+										<input type="hidden" name="id" value="${product.id}">
+										<input type="hidden" name="name" value="${product.name}">
+										<input type="hidden" name="desc" value="${product.description}">
 									</form><br/>
+									
+									Amount in cart:
+									<select name="itemQuantity">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>&emsp;
+									
+									<!-- ORIGINAL Total: <em>$${product.price}</em> -->
+									Total: <em>$${product.price} per pound</em>&emsp;
 								<a href="ToggleRemoveController?id=${product.id}">Delete</a><br/>
 								<hr/>
+								
 							</c:otherwise>	
 					</c:choose>
 				</li>
 			</c:forEach>
+			
+			<a href="SeeFoodController">Continue shopping</a>&emsp;
+			<input type="submit" value="Checkout">
 		</c:otherwise>
 	</c:choose>
-
-	<a href="SeeFoodController">Continue shopping</a>&emsp;
 	
-	<c:if test="${not empty userProducts}">
-		<a href="RemoveProductsController">Remove selected products</a><br/>
-		<a href="CheckoutController">Proceed to checkout</a>
+	<c:if test="${empty userProducts}">
+		<a href="SeeFoodController">Continue shopping</a>
 	</c:if>
+	
+	<!--
+	<c:if test="${not empty userProducts}">
+		<a href="RemoveProductsController">Remove selected products</a><br/><hr/>
+		<input type="Submit" value="Checkout">
+	</c:if>
+	-->
 </body>
 </html>

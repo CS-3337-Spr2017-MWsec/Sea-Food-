@@ -34,6 +34,7 @@ public class ShoppingCartController extends HttpServlet {
 
 		if(request.getParameter("id") != null){			
 			ProductBean item = getProductBean(request, Integer.valueOf(request.getParameter("id")));
+			item.setQuantity(item.getQuantity() + 1);
 			
 			userProducts.add(item);
 		}

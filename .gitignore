@@ -1,19 +1,7 @@
-# Ignore everything
+#Ignore ALL files.
 *
 
-# But do not Ignore these files...
+#Do NOT ignore these files.
 !.gitignore
-
-!See-Food_Website
-
-!See-Food_Website/**
-
 !SeeFoodWorkspace/See-Food/src/**
-!SeeFoodWorkspace/See-Food/WebContent/**
-
-!*.txt
-!*.md
-
-
-
-#Additional Specific files to Ignore
+!SeeFoodWorkspace/See-Food/WebContent/WEB-INF/SFSS/**

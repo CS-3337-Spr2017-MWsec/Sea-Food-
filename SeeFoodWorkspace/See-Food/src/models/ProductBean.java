@@ -9,13 +9,15 @@ public class ProductBean {
 	int stock;
 	String description;
 	boolean delete;
+	Double price;
 	
-	public ProductBean(String name, String description, int stock){
+	public ProductBean(String name, String description, int stock, double price){
 		this.id = idCount++;
 		this.name = name;
 		this.description = description;
 		this.stock = stock;
 		this.delete = false;
+		this.price = price;
 	}
 	
 	public Integer getId(){
@@ -55,5 +57,12 @@ public class ProductBean {
 	}
 	public void setDelete(boolean delete){
 		this.delete = delete;
+	}
+	
+	public Double getPrice(){
+		return price;
+	}
+	public void setPrice(Double price){
+		this.price = price;
 	}
 }
