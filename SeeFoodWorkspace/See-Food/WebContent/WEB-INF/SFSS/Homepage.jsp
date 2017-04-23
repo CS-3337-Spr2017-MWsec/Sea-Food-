@@ -46,9 +46,13 @@
 	<c:forEach items="${listOfProducts}" var="product">
 		<div style="text-align:left;">
 			<h2><strong>${product.name}</strong></h2><br/>
+			<h3>Product ID: <em>${product.id}</em></h3>
 			<h4><em>*${product.description}</em></h4><br/>
-			Amount in stock: ${product.stock}&emsp;<a href="ShoppingCartController?id=${product.id}">Add to Shopping Cart</a>&emsp;
-			Price per pound: <em>$${product.price}</em>
+			Amount in stock: ${product.stock}&emsp;
+			Price per pound: <em>$${product.price}</em>&emsp;
+			Weight: <em>${product.weight}</em>&emsp;
+			Length: <em>${product.length}</em><br/>
+			<a href="ShoppingCartController?id=${product.id}">Add to Shopping Cart</a>
 		</div>
 		<hr/>
 	</c:forEach>

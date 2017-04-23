@@ -26,7 +26,9 @@
 	<c:forEach items="userProducts" var="items">
 		<strong>${items.name}</strong><br/>
 		<em>${items.description}</em><br/>
-		${items.quantity}<br/>
+		Amount: ${items.quantity}<br/>
+		Weight: ${items.weight}<br/>
+		Length: ${items.length}<br/> 
 		Date ordered: <fmt:formatDate type="date" value="${today}" pattern="d"/><hr/>
 		
 		<!-- FOR REFERENCE.

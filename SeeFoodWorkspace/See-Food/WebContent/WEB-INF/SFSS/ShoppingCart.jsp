@@ -43,6 +43,8 @@
 								<s>
 									<strong>${product.name}</strong><br/>
 									<em>${product.description}</em><br/>
+									Weight: <strong>${product.weight}</strong><br/>
+									Size: <strong>${product.length}</strong><br/>
 									<!-- Amount in cart: ${product.quantity}<br/> -->
 								</s>
 									<a href="ToggleRemoveController?id=${product.id}">Do NOT delete</a>&emsp;
@@ -52,12 +54,17 @@
 							
 							<c:otherwise> <!-- Otherwise, remove from removal. -->
 								<strong>${product.name}</strong><br/>
-								<em>${product.description}</em><br/>
+								<em>${product.description}</em><br/><br/>
+								Weight: <strong>${product.weight}</strong><br/>
+								Size: <strong>${product.length}</strong><br/>
 									<form action="OrderController" method="POST">
 										<input type="hidden" name="id" value="${product.id}">
 										<input type="hidden" name="name" value="${product.name}">
 										<input type="hidden" name="desc" value="${product.description}">
+										<input type="hidden" name="weight" value="${product.weight}">
+										<input type="hidden" name="length" value="${product.length}">
 									</form><br/>
+									Total: <em>$${product.price} <strong>per pound</strong></em><br/>
 									
 									Amount in cart:
 									<select name="itemQuantity">
@@ -69,7 +76,6 @@
 									</select>&emsp;
 									
 									<!-- ORIGINAL Total: <em>$${product.price}</em> -->
-									Total: <em>$${product.price} per pound</em>&emsp;
 								<a href="ToggleRemoveController?id=${product.id}">Delete</a><br/>
 								<hr/>
 								
