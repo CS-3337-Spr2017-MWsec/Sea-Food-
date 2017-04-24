@@ -17,7 +17,7 @@ import models.ProductBean;
 @WebServlet("/ProductSelectionController")
 public class ProductSelectionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	public static String isNull = null;
 	
 	public void init( ServletConfig config ) throws ServletException
     {
@@ -36,83 +36,116 @@ public class ProductSelectionController extends HttpServlet {
 				+ "significant species Homarus americanus and Homarus gammarus. The Cape\n "
 				+ "lobster, which was formerly in this genus as H. capensis, was moved in\n "
 				+ "1995 to the new genus Homarinus.", 89, 15.66, 8, 1.2));
-
+        
+//        for(ProductBean item: listOfTestProducts){
+//        	System.out.println(item.getId());
+//        	System.out.println(item.getName());
+//        	System.out.println(item.getDescription());
+//        	System.out.println(item.getQuantity());
+//        	System.out.println(item.getStock());
+//        }
+        
         //Store the data somewhere that can be accessed by this servlet.
         getServletContext().setAttribute("listOfTestProducts", listOfTestProducts);
     }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//TEST.
-//		if(request.getParameter("id") != null){
+//			@SuppressWarnings("unchecked")
+//			ArrayList<ProductBean> listOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfTestProducts");
 			@SuppressWarnings("unchecked")
-			ArrayList<ProductBean> listOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfTestProducts");
-			@SuppressWarnings("unchecked")
-			ArrayList<ProductBean> filteredlistOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfTestProducts");
+			ArrayList<ProductBean> filteredListOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("filteredListOfTestProducts");
 	
-			if(filteredlistOfTestProducts != null){
-				request.getServletContext().setAttribute("filteredlistOfTestProducts", filteredlistOfTestProducts);				
-			}else{
-				request.getServletContext().setAttribute("listOfTestProducts", listOfTestProducts);	
+//			if(filteredListOfTestProducts != null){
+			if(filteredListOfTestProducts != null && isNull != null){
+				request.getServletContext().setAttribute("isNull", isNull);
+				request.getServletContext().setAttribute("filteredListOfTestProducts", filteredListOfTestProducts);				
+//			}else{
+//				request.getServletContext().setAttribute("listOfTestProducts", listOfTestProducts);	
 			}
 		
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/SFSS/ProductSelection.jsp");
-			dispatcher.forward(request, response);	
-//		}
-	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String s = request.getParameter("searchProductCode");
-		
-		if(s.equals(null) || s.trim().length() == 0){
-			String errorMsg = "Please input a number.";
-			request.setAttribute("errorMsg", errorMsg);
-			request.setAttribute("entry", null);
-		}else{
-		
-		int searchProductCode= Integer.parseInt(s);
-		
-		@SuppressWarnings("unchecked")
-		ArrayList<ProductBean> listOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfTestProducts");
-		
-		boolean found = false;
-		boolean stock = false;
-		
-		//Contains all products that match the search query.
-		ArrayList<ProductBean> filteredlistOfTestProducts= new ArrayList<ProductBean>();
-
-		//Search all all products for matching search query from input.
-		for(ProductBean product : listOfTestProducts){
-			//If match found, add to filtered list.
-			if(product.getId() == searchProductCode){
-				found = true;
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/SFSS/ProductSelection.jsp");
+//			dispatcher.forward(request, response);
 				
-				if(product.getStock() != 0){
-					stock = true;
-					filteredlistOfTestProducts.add(product);
-				}
-			}
-		}
-		
-		if(found == false){
-			request.setAttribute("message", "We couldn't find anything with that product code.");
-			
-		}else if(found == true && stock == true){
-			request.setAttribute("message", "We found something!");
 			request.setAttribute("productCode", "Product Code");
 			request.setAttribute("productName", "Name");
 			request.setAttribute("productDescription", "Description");
 			request.setAttribute("productWeight", "Weight");
 			request.setAttribute("productLength", "Length");
-			request.setAttribute("productPrice", "Price");
-		}else if(found == true && stock == false){
-			request.setAttribute("message", "Looks like that product has already been sold.");
-		}
+			request.setAttribute("productPrice", "Price");	
+			
+			request.getRequestDispatcher("/WEB-INF/SFSS/ProductSelection.jsp").forward(request, response);
+	}
 
-		request.setAttribute("listOfTestProducts", filteredlistOfTestProducts);
-		doGet(request, response);
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		isNull = null;
 		
+		String s = request.getParameter("searchProductCode");
+		
+		@SuppressWarnings("unchecked")
+		ArrayList<ProductBean> listOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfTestProducts");
+
+		//Contains all products that match the search query.
+		ArrayList<ProductBean> filteredListOfTestProducts = new ArrayList<ProductBean>();
+
+		if(s.equals(null) || s.trim().length() == 0){
+			String errorMsg = "Please input a number.";
+			request.setAttribute("errorMsg", errorMsg);
+		}else{
+		
+			int searchProductCode= Integer.parseInt(s);
+			
+			
+			boolean found = false;
+			boolean stock = false;
+			
+	
+			//Search all all products for matching search query from input.
+			for(ProductBean product: listOfTestProducts){
+				//If match found, add to filtered list.
+				if(product.getId() == searchProductCode){
+					found = true;
+					
+					if(product.getStock() > 0){
+						stock = true;
+						System.out.println("This ran!");
+						System.out.println(product.getName());
+						filteredListOfTestProducts.add(product);
+					}
+				}
+			}
+			
+			if(found == false){
+				request.setAttribute("message", "We couldn't find anything with that product code.");
+				
+			}else if(found == true && stock == true){
+				request.setAttribute("message", "We found something!");
+				request.setAttribute("productCode", "Product Code");
+				request.setAttribute("productName", "Name");
+				request.setAttribute("productDescription", "Description");
+				request.setAttribute("productWeight", "Weight");
+				request.setAttribute("productLength", "Length");
+				request.setAttribute("productPrice", "Price");
+				
+				isNull = "x";
+				
+			}else if(found == true && stock == false){
+				request.setAttribute("message", "Looks like that product has already been sold.");
+			}
 		}
+		
+		//TEST: SUCCESS
+//		for(ProductBean items: filteredListOfTestProducts){
+//			System.out.println(items.getName());
+//			System.out.println(items.getId());
+//			System.out.println(items.getDescription());
+//			System.out.println(items.getQuantity());
+//			System.out.println(items.getStock());
+//		}
+		
+//		request.setAttribute("listOfTestProducts", filteredListOfTestProducts);
+		request.getServletContext().setAttribute("filteredListOfTestProducts", filteredListOfTestProducts);
+		doGet(request, response);
 	}
 }

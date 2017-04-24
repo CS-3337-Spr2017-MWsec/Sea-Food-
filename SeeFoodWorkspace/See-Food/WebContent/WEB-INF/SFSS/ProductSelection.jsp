@@ -8,14 +8,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<!--
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+-->
+
 <title>Product Selection</title>
 </head>
 
 
 
 <body>
+	<!-- Nate's YT Account <iframe width="560" height="315" -->
+	<iframe style="float:right;" width="560" height="315" 
+	src="https://www.youtube.com/embed/live_stream?channel=UCEXqq00s8jq7fqKLQixJ-Iw&autoplay=1"
+	frameborder="0" allowfullscreen></iframe>
+	
+	<%-- TEST
 	<c:choose>
-		<c:when test="${empty entry}">
+		<c:when test="${empty isNull}">
+	--%>
 			<form action="ProductSelectionController" method="POST">
 				<c:if test="${not empty errorMsg}">
 					<p style="color: red;">${errorMsg}</p>
@@ -23,9 +36,11 @@
 				Search by Product Code: <input type="text" name="searchProductCode" placeholder="Enter a search query">
 				<input type="submit" value="Submit">
 			</form><br/>
+	<%-- TEST	
 		</c:when>
 	
 		<c:otherwise>
+	--%>
 			${message}
 			<br/>
 			
@@ -39,7 +54,8 @@
 					<th>${productPrice}</th>
 				</tr>
 				
-					<c:forEach items="${filteredlistOfTestProducts}" var="product">
+		<c:if test="${not empty isNull}">
+					<c:forEach items="${filteredListOfTestProducts}" var="product">
 				<tr>
 						<td>${product.id}</td>
 						<td>${product.name}</td>
@@ -47,12 +63,25 @@
 						<td>${product.weight}</td>
 						<td>${product.length}</td>
 						<td>${product.price}</td>
-						<td></td>
 				</tr>
+				<tr></tr>
+				
+				<!--
+					Product ID: ${product.id}
+					Product Name: ${product.name}
+					Product Description: ${product.description}
+					Product Weight: ${product.weight}
+					Product Length: ${product.length}
+					Product Price: ${product.price}
+				
+				-->
 					</c:forEach>
+		</c:if>
 			</table>
 			<br/>
+	<%-- TEST
 		</c:otherwise>
 	</c:choose>
+	--%>
 </body>
 </html>

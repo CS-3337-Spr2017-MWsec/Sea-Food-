@@ -12,12 +12,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <title>Registration</title>
 </head>
 <body>
 	<c:choose>
 		<c:when test="${empty billing}">
-			<h3>A new SFSS family member!</h3>
+		<div style="jumbotron">
+			<!-- <h3>A new SFSS family member!</h3> -->
+			<header>A new SFSS family member!</header>
+			
 			<h4>We just need your:</h4>
 			<form action="RegistrationController" method="POST">
 				Username: <input type="text" name="username" placeholder="Enter your username"/><br/>
@@ -26,6 +33,8 @@
 				Re-enter your password: <input type="password" name="password2"/><br/>
 				<input type="submit" value="Submit"/>
 			</form>
+			<a href="SeeFoodController">Go back</a>
+		</div>
 		</c:when>
 		
 		<c:otherwise>

@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
 				request.getSession().setAttribute("username", username);
 				request.getSession().setAttribute("listOfCustomers", listOfCustomers);
 //				request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
-				request.getServletContext().setAttribute("userProducts", (ArrayList<ProductBean>) getServletContext().getAttribute("userProducts")); 
+				request.getServletContext().setAttribute("userProducts", new ArrayList<ProductBean>()); 
 				
 				response.sendRedirect("SeeFoodController");
 			}
