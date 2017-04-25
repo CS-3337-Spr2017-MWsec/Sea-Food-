@@ -17,7 +17,7 @@ public class Test {
 		ArrayList<Vendor> products = new ArrayList<Vendor>();
 		// products.add(new Product (1, "red lobster", 20.00));
 
-		Vendor newProduct = new Vendor(1, "lobster", 20.00);
+		Vendor newProduct = new Vendor(1234, "lobster", 20.00);
 		products.add(newProduct);
 		
 		while (option != 4) {

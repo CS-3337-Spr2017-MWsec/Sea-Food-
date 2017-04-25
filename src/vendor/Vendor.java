@@ -1,8 +1,11 @@
 package vendor;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import Orders.Order;
 
 public class Vendor {
 	int id;
@@ -80,14 +83,17 @@ public class Vendor {
 	}
 
 	public static void deleteProduct(int id, ArrayList<Vendor> products) {
-		products.remove(id - 1);
-		System.out.println("Product has been removed");
-		System.out.println("ID\tName\tPrice\n");
-		for (int i = 0; i < products.size(); i++) {
-			System.out.print(products.get(i).getId() + "\t");
-			System.out.print(products.get(i).getName() + "\t");
-			System.out.print(products.get(i).getPrice() + "\t" + "\n");
-		}
+		Iterator<Vendor> it = products.iterator();
+        while(it.hasNext())
+        {
+            Vendor order = it.next();
+            if(order.getId()==id)
+            {
+                it.remove();
+                System.out.println("Successfully Deleted");
+            }
+        }
+        System.out.println("Id not found!!! Please enter the right Id");
 	}
 
 	public static int checkDigit() {
