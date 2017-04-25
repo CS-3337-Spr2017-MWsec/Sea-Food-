@@ -19,8 +19,7 @@ public class ProductSelectionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static String isNull = null;
 	
-	public void init( ServletConfig config ) throws ServletException
-    {
+	public void init( ServletConfig config ) throws ServletException{
         super.init( config );
 
         //Create some test data for display.
@@ -37,13 +36,10 @@ public class ProductSelectionController extends HttpServlet {
 				+ "lobster, which was formerly in this genus as H. capensis, was moved in\n "
 				+ "1995 to the new genus Homarinus.", 89, 15.66, 8, 1.2));
         
-//        for(ProductBean item: listOfTestProducts){
-//        	System.out.println(item.getId());
-//        	System.out.println(item.getName());
-//        	System.out.println(item.getDescription());
-//        	System.out.println(item.getQuantity());
-//        	System.out.println(item.getStock());
-//        }
+        for(ProductBean item: listOfTestProducts){
+        	System.out.println(item.getId());
+        	System.out.println(item.getName());
+        }
         
         //Store the data somewhere that can be accessed by this servlet.
         getServletContext().setAttribute("listOfTestProducts", listOfTestProducts);
@@ -135,16 +131,6 @@ public class ProductSelectionController extends HttpServlet {
 			}
 		}
 		
-		//TEST: SUCCESS
-//		for(ProductBean items: filteredListOfTestProducts){
-//			System.out.println(items.getName());
-//			System.out.println(items.getId());
-//			System.out.println(items.getDescription());
-//			System.out.println(items.getQuantity());
-//			System.out.println(items.getStock());
-//		}
-		
-//		request.setAttribute("listOfTestProducts", filteredListOfTestProducts);
 		request.getServletContext().setAttribute("filteredListOfTestProducts", filteredListOfTestProducts);
 		doGet(request, response);
 	}

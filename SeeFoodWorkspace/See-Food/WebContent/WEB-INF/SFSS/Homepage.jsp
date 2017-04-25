@@ -46,10 +46,26 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</div>
 	</c:if>
 	
-	<!-- Nate's YT Account <iframe width="560" height="315" -->
+	<!--
+	Nate's YT Account <iframe width="560" height="315"
 	<iframe style="float:right;" width="560" height="315" 
 	src="https://www.youtube.com/embed/live_stream?channel=UCEXqq00s8jq7fqKLQixJ-Iw&autoplay=1"
 	frameborder="0" allowfullscreen></iframe>
+	-->
+	
+	<h3><a href="ProductSelectionController">Come and see what we've got!</a></h3>
+	
+	<!--
+	NEW YT Account for webcamera.
+	-->
+	<iframe style="float:right;" width="560" height="315"
+	src="https://www.youtube.com/channel/UCae3AP4kpj9yRx5C2e100Ng/live"
+	frameborder="0" allowfullscreen></iframe>
+	
+	<!-- NON-VIDEO STREAM
+	0.	src="https://www.youtube.com/embed/live_stream?channel=UCae3AP4kpj9yRx5C2e100Ng&autoplay=1"
+	1.	src="https://www.youtube.com/watch?v=4RUGmBxe65U""
+	-->
 	
 	<!--
 	<p style="text-align:right;">
