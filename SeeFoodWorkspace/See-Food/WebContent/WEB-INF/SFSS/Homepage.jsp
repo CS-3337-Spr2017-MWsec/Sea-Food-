@@ -46,36 +46,28 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</div>
 	</c:if>
 	
-	<!--
-	Nate's YT Account <iframe width="560" height="315"
-	<iframe style="float:right;" width="560" height="315" 
-	src="https://www.youtube.com/embed/live_stream?channel=UCEXqq00s8jq7fqKLQixJ-Iw&autoplay=1"
-	frameborder="0" allowfullscreen></iframe>
-	-->
 	
-	<h3><a href="ProductSelectionController">Come and see what we've got!</a></h3>
-	
+	<div style="float:right; border=5px;">
 	<!--
 	NEW YT Account for webcamera.
-	-->
+	
+	ORIGINAL
 	<iframe style="float:right;" width="560" height="315"
 	src="https://www.youtube.com/channel/UCae3AP4kpj9yRx5C2e100Ng/live"
 	frameborder="0" allowfullscreen></iframe>
 	
-	<!-- NON-VIDEO STREAM
-	0.	src="https://www.youtube.com/embed/live_stream?channel=UCae3AP4kpj9yRx5C2e100Ng&autoplay=1"
-	1.	src="https://www.youtube.com/watch?v=4RUGmBxe65U""
+	<iframe "width="900" height="315" src="https://www.youtube.com/embed/aFiUwFbV9Mw"
+	frameborder="0" allowfullscreen></iframe>
 	-->
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/G14pCtS9MI4" frameborder="0" allowfullscreen></iframe>
 	
-	<!--
-	<p style="text-align:right;">
-		<a href="ShoppingCartController">Shopping Cart</a>	
-	</p>
-	-->
-	
-	
+	<br/>
+	<a href="ProductSelectionController">Come and see what we've got!</a>
+	<br/>
+	</div>
 	
 	<!-- LISTINGS OF PRODUCTS BELOW. -->
+	<!-- TEST -->
 	<c:forEach items="${listOfProducts}" var="product">
 		<div style="text-align:left;">
 			<div style="jumbotron">
@@ -89,7 +81,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				<a href="ShoppingCartController?id=${product.id}"><button>Add to Shopping Cart</button></a>
 			</div>
 		</div>
-		<hr/>
 	</c:forEach>
 </body>
 </html>

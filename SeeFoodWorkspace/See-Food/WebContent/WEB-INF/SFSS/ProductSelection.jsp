@@ -20,28 +20,28 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 <body>
-	<!--
-	Nate's YT Account <iframe width="560" height="315"
-	<iframe style="float:right;" width="560" height="315" 
-	src="https://www.youtube.com/embed/live_stream?channel=UCEXqq00s8jq7fqKLQixJ-Iw&autoplay=1"
-	frameborder="0" allowfullscreen></iframe>
-	-->
-	
+	<div style="float:right;">
 	<!--
 	NEW YT Account for webcamera.
-	-->
+	
+	ORIGINAL
 	<iframe style="float:right;" width="560" height="315"
-	src=" https://www.youtube.com/embed/live_stream?channel=UCae3AP4kpj9yRx5C2e100Ng&autoplay=1"
+	src="https://www.youtube.com/channel/UCae3AP4kpj9yRx5C2e100Ng/live"
 	frameborder="0" allowfullscreen></iframe>
-
-	<!-- NON-VIDEO STREAM
-	src="https://www.youtube.com/watch?v=4RUGmBxe65U"
+	
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/aFiUwFbV9Mw"
+	frameborder="0" allowfullscreen></iframe>
 	-->
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/G14pCtS9MI4" frameborder="0" allowfullscreen></iframe>
+	
+	</div>
+	<br/>
 
 	<%-- TEST
 	<c:choose>
 		<c:when test="${empty isNull}">
 	--%>
+	<div style="float:clear;">
 			<form action="ProductSelectionController" method="POST">
 				<c:if test="${not empty errorMsg}">
 					<p style="color: red;">${errorMsg}</p>
@@ -92,9 +92,12 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</c:if>
 			</table>
 			<br/>
+			
+			<a href="SeeFoodController">Home</a>
 	<%-- TEST
 		</c:otherwise>
 	</c:choose>
 	--%>
+	</div>
 </body>
 </html>

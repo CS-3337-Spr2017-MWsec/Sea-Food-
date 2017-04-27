@@ -3,7 +3,6 @@ package controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.ProductBean;
-
 
 @WebServlet("/ProductSelectionController")
 public class ProductSelectionController extends HttpServlet {
@@ -47,22 +45,14 @@ public class ProductSelectionController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//			@SuppressWarnings("unchecked")
-//			ArrayList<ProductBean> listOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfTestProducts");
 			@SuppressWarnings("unchecked")
 			ArrayList<ProductBean> filteredListOfTestProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("filteredListOfTestProducts");
 	
-//			if(filteredListOfTestProducts != null){
 			if(filteredListOfTestProducts != null && isNull != null){
 				request.getServletContext().setAttribute("isNull", isNull);
 				request.getServletContext().setAttribute("filteredListOfTestProducts", filteredListOfTestProducts);				
-//			}else{
-//				request.getServletContext().setAttribute("listOfTestProducts", listOfTestProducts);	
 			}
 		
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/SFSS/ProductSelection.jsp");
-//			dispatcher.forward(request, response);
-				
 			request.setAttribute("productCode", "Product Code");
 			request.setAttribute("productName", "Name");
 			request.setAttribute("productDescription", "Description");
