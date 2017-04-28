@@ -53,7 +53,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="market.html">Market</a></li>
 					<li><a href="about.html">About</a></li>
-					<li><a href="Shopping_Cart.html">Shopping Cart</a></li>
+					<li><a href="ShoppingCartController">Shopping Cart</a></li>
 					<li><a href="contact.html">Contact</a></li>
 					<li><a href="register.html">Register</a></li>
 				</ul>
@@ -78,6 +78,8 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<h4>We just need your:</h4>
 					<form action="RegistrationController" method="POST">
 						<div class="col-sm-12">
+							<img src="http://clipart-library.com/images/qcBALMeni.gif"
+								style="position: absolute; top: -56px; right: 50px;" width="350" height="350">
 							<div class="row">
 								<label>Username: </label> <input type="text" name="username"
 									placeholder="Enter your username" class="form-control"
