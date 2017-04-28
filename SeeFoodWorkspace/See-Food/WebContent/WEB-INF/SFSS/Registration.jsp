@@ -64,12 +64,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	<c:choose>
 		<c:when test="${empty billing}">
 
-
-
-
-
-
-
 			<!-- <h3>A new SFSS family member!</h3> -->
 			<header>A new SFSS family member!</header>
 			<div class="container">
@@ -79,7 +73,8 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<form action="RegistrationController" method="POST">
 						<div class="col-sm-12">
 							<img src="http://clipart-library.com/images/qcBALMeni.gif"
-								style="position: absolute; top: -56px; right: 50px;" width="350" height="350">
+								style="position: absolute; top: -15px; right: 0px;" width="350"
+								height="350">
 							<div class="row">
 								<label>Username: </label> <input type="text" name="username"
 									placeholder="Enter your username" class="form-control"
@@ -134,6 +129,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</c:otherwise>
 	</c:choose>
 
-
+	<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
