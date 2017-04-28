@@ -47,15 +47,15 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">See-Food</a>
+				<a class="navbar-brand" href="SeeFoodController">See-Food</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="market.html">Market</a></li>
-					<li><a href="about.html">About</a></li>
+					<li><a href="ProductSelectionController">Market</a></li>
+					<li><a href="">About</a></li>
 					<li><a href="ShoppingCartController">Shopping Cart</a></li>
-					<li><a href="contact.html">Contact</a></li>
-					<li><a href="register.html">Register</a></li>
+					<li><a href="">Contact</a></li>
+					<li><a href="">Register</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -74,6 +74,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 						<div class="col-sm-12">
 							<img src="http://clipart-library.com/images/qcBALMeni.gif"
 								style="position: absolute; top: -15px; right: 0px;" width="350"
+								max-width: 100%; height: auto;
 								height="350">
 							<div class="row">
 								<label>Username: </label> <input type="text" name="username"
@@ -92,8 +93,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 							<div class="row">
 								<label>Password: </label> <input type="password"
 									name="password1" class="form-control" style="width: 300px;" /><br />
-
-
 							</div>
 						</div>
 						<div class="col-sm-12">
@@ -104,8 +103,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 							</div>
 						</div>
 						<input type="submit" value="Submit" />
-
-
 					</form>
 					<a href="SeeFoodController">Go back</a>
 				</div>
@@ -128,6 +125,41 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 			</c:if>
 		</c:otherwise>
 	</c:choose>
+	<!-- footer -->
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4>My Bunker</h4>
+					<p>
+						Some Address 987, <br /> +34 9054 5455, <br /> Madrid, Spain.
+					</p>
+				</div>
+				<!-- /col-lg-4 -->
+
+				<div class="col-lg-4">
+					<h4>My Links</h4>
+					<p>
+						<a href="#">Dribbble</a> <br /> <a href="#">Twitter</a> <br /> <a
+							href="#">Facebook</a>
+					</p>
+				</div>
+				<!-- /col-lg-4 -->
+
+				<div class="col-lg-4">
+					<h4>About Stanley</h4>
+					<p>This cute theme was created to showcase your work in a
+						simple way. Use it wisely.</p>
+				</div>
+				<!-- /col-lg-4 -->
+
+			</div>
+
+		</div>
+	</div>
+
+
+
 
 	<script src="assets/js/bootstrap.min.js"></script>
 </body>
