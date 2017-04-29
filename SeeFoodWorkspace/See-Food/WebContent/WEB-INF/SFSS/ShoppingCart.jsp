@@ -76,8 +76,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	<c:choose>
 		<c:when test="${empty userProducts}">
 
-
-
 			<div id="ww">
 				<div class="container">
 					<div class="row">
