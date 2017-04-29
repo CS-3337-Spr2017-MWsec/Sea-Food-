@@ -76,6 +76,10 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 								style="position: absolute; top: -15px; right: 0px;" width="350"
 								max-width: 100%; height: auto;
 								height="350">
+						</div>
+
+						<div class="col-sm-12">
+
 							<div class="row">
 								<label>Username: </label> <input type="text" name="username"
 									placeholder="Enter your username" class="form-control"
@@ -111,17 +115,60 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 		<c:otherwise>
 			<c:if test="${not empty username}">
-				<h3>Oh? So you want these products?</h3>
-				<h4>In order for us to deliver these to your door, we'll need:</h4>
-				<form action="RegistrationController" method="POST">
-					First name: <input type="text" name="firstName"><br />
-					Last name: <input type="text" name="lastName"><br />
-					Shipping address: <input type="text" name="shippingAddress"><br />
-					Phone number: <input type="text" name="number"><br />
-					Billing address: <input type="text" name="billingAddress"><br />
-					Card number: <input type="text" name="card"><br /> <input
-						type="submit" value="Submit">
-				</form>
+
+				<header>Oh? So you want these products?</header>
+				<div class="container">
+					<h1 class="well">In order for us to deliver these to your
+						door, we'll need</h1>
+					<div class="col-lg-12 well">
+
+						<form action="RegistrationController" method="POST">
+							<div class="col-sm-12">
+
+								<div class="row">
+
+									First name: <input type="text" name="firstName"><br />
+								</div>
+							</div>
+
+							<div class="col-sm-12">
+
+								<div class="row">
+									Last name: <input type="text" name="lastName"><br />
+
+								</div>
+							</div>
+							<div class="col-sm-12">
+
+								<div class="row">
+									Shipping address: <input type="text" name="shippingAddress"><br />
+								</div>
+							</div>
+
+							<div class="col-sm-12">
+
+								<div class="row">
+									Phone number: <input type="text" name="number"><br />
+
+								</div>
+							</div>
+							<div class="col-sm-12">
+
+								<div class="row">
+									Billing address: <input type="text" name="billingAddress"><br />
+								</div>
+							</div>
+							<div class="col-sm-12">
+
+								<div class="row">
+									Card number: <input type="text" name="card"><br />
+								</div>
+							</div>
+
+							<input type="submit" value="Submit">
+						</form>
+					</div>
+				</div>
 			</c:if>
 		</c:otherwise>
 	</c:choose>
@@ -132,7 +179,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				<div class="col-lg-4">
 					<h4>My Bunker</h4>
 					<p>
-						Some Address 987, <br /> +34 9054 5455, <br /> Madrid, Spain.
+						CSULA, <br />
 					</p>
 				</div>
 				<!-- /col-lg-4 -->
@@ -147,18 +194,19 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				<!-- /col-lg-4 -->
 
 				<div class="col-lg-4">
-					<h4>About Stanley</h4>
-					<p>This cute theme was created to showcase your work in a
-						simple way. Use it wisely.</p>
+					<h4>About See-Food</h4>
+					<p>
+						Put your heart, mind, and soul into even your smallest acts. This
+						is the secret of success. - Swami Sivananda
+
+
+						<!-- /col-lg-4 -->
 				</div>
-				<!-- /col-lg-4 -->
 
 			</div>
-
 		</div>
+
 	</div>
-
-
 
 
 	<script src="assets/js/bootstrap.min.js"></script>
