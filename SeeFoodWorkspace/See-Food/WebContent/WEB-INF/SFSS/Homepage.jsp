@@ -77,15 +77,11 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	</c:if>
 	<c:if test="${empty username}">
 		<div class='jumbotron' style="text-align: right;">
-			<div style="text-align: left;">
-				<h4>
-					<em>*All descriptions of each product are from Wikipedia.</em>
-				</h4>
-			</div>
+
 			Have an account?
 			<form action="LoginController" method="POST">
-				Username: <input type="text" name="username"
-					placeholder="Enter your username" /><br /> Password: <input
+				<label>Username: </label> <input type="text" name="username"
+					placeholder="Enter your username" /><br /> <label>Password: </label>  <input
 					type="password" name="password" placeholder="Enter your password" /><br />
 				<input type="submit" value="Log in" />&emsp; <a
 					href="ShoppingCartController"><button>Shopping Cart</button></a>
