@@ -94,59 +94,67 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</c:when>
 
 		<c:otherwise>
-			<h2>Your products in your Shopping Cart:</h2>
-			<p>
-				Total products in shopping cart: ${numberOfProducts}<br />
-			</p>
+			<div id="grey">
+				<div class="container">
+					<center>
+						<h3>Your products in your Shopping Cart:</h3>
+					</center>
 
-			<c:forEach items="${userProducts}" var="product">
-				<li><c:choose>
-						<c:when test="${product.delete}">
-							<!-- If product object is marked for removal. -->
-							<div style="">
-								<s> <strong>${product.name}</strong><br /> <em>${product.description}</em><br />
-									Weight: <strong>${product.weight}</strong><br /> Size: <strong>${product.length}</strong><br />
-									<!-- Amount in cart: ${product.quantity}<br/> -->
-								</s> <a href="ToggleRemoveController?id=${product.id}">Do NOT
-									delete</a>&emsp; <a href="RemoveProductsController">Remove
-									selected products</a><br />
-								<hr />
-							</div>
-						</c:when>
+				
+					<p>
+						Total products in shopping cart: ${numberOfProducts}<br />
+					</p>
 
-						<c:otherwise>
-							<!-- Otherwise, remove from removal. -->
-							<div style="">
-								<strong>${product.name}</strong><br /> <em>${product.description}</em><br />
-								<br /> Weight: <strong>${product.weight}</strong><br />
-								Length: <strong>${product.length}</strong><br />
-								<form action="OrderController" method="POST">
-									<input type="hidden" name="id" value="${product.id}"> <input
-										type="hidden" name="name" value="${product.name}"> <input
-										type="hidden" name="desc" value="${product.description}">
-									<input type="hidden" name="weight" value="${product.weight}">
-									<input type="hidden" name="length" value="${product.length}">
-								</form>
-								<br /> Total: <em>$${product.price} <strong>per
-										pound</strong></em><br /> Amount in cart: <select name="itemQuantity">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-								</select>&emsp;
+					<c:forEach items="${userProducts}" var="product">
+						<li><c:choose>
+								<c:when test="${product.delete}">
+									<!-- If product object is marked for removal. -->
+									<div style="">
+										<s> <strong>${product.name}</strong><br /> <em>${product.description}</em><br />
+											Weight: <strong>${product.weight}</strong><br /> Size: <strong>${product.length}</strong><br />
+											<!-- Amount in cart: ${product.quantity}<br/> -->
+										</s> <a href="ToggleRemoveController?id=${product.id}">Do NOT
+											delete</a>&emsp; <a href="RemoveProductsController">Remove
+											selected products</a><br />
+										<hr />
+									</div>
+								</c:when>
 
-								<!-- ORIGINAL Total: <em>$${product.price}</em> -->
-								<a href="ToggleRemoveController?id=${product.id}">Delete</a><br />
-								<hr />
-							</div>
-						</c:otherwise>
-					</c:choose></li>
-			</c:forEach>
+								<c:otherwise>
+									<!-- Otherwise, remove from removal. -->
+									<div style="">
+										<strong>${product.name}</strong><br /> <em>${product.description}</em><br />
+										<br /> Weight: <strong>${product.weight}</strong><br />
+										Length: <strong>${product.length}</strong><br />
+										<form action="OrderController" method="POST">
+											<input type="hidden" name="id" value="${product.id}">
+											<input type="hidden" name="name" value="${product.name}">
+											<input type="hidden" name="desc"
+												value="${product.description}"> <input type="hidden"
+												name="weight" value="${product.weight}"> <input
+												type="hidden" name="length" value="${product.length}">
+										</form>
+										<br /> Total: <em>$${product.price} <strong>per
+												pound</strong></em><br /> Amount in cart: <select name="itemQuantity">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>&emsp;
 
-			<a href="SeeFoodController">Continue shopping</a>
-			&emsp;
-			<input type="submit" value="Checkout">
+										<!-- ORIGINAL Total: <em>$${product.price}</em> -->
+										<a href="ToggleRemoveController?id=${product.id}">Delete</a><br />
+										<hr />
+									</div>
+								</c:otherwise>
+							</c:choose></li>
+					</c:forEach>
+
+					<a href="SeeFoodController">Continue shopping</a> &emsp; <input
+						type="submit" value="Checkout">
+				</div>
+			</div>
 		</c:otherwise>
 	</c:choose>
 
