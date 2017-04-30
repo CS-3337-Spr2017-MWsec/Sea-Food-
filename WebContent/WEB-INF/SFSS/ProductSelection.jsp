@@ -46,7 +46,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	See something you like? Enter a product code to get more detailed information!
 	<br>
 	<br>
-			<form action="ProductSelectionController" method="post">	
+<form action="LiveCameraFeed" method="post">	
 Search by Product Code: 
 <input type="text" name="searchProductCode"  placeholder="Enter a search query" value=${param.searchProductCode}>
 
@@ -65,23 +65,25 @@ ${message}
 <th>${productLength}</th>
 <th>${productPrice}</th>
 
- <tr><c:forEach items="${filteredListOfProducts}" var="product">
+<c:forEach items="${filteredListOfProducts}" var="product">
+ <tr>
  	<td>${product.id}</td>
  	<td>${product.name}</td>
  	<td>${product.description}</td>
  	<td>${product.weight}</td>
  	<td>${product.length}</td>
  	<td>${product.price}</td>
- </c:forEach>
  </tr>
+ </c:forEach>
+
  </table>
  <br>
  <br>
  <br>
- <form action="SearchDescriptionController" method="post">	
+ <form action="SearchDescription" method="post">	
 Search Product Descriptions: 
 <input type="text" name="searchProductDescription" value=${param.searchProductDescription}>
-<input type="submit" name="submit2" value="Submit" />
+<input type="submit" name="submit" value="Submit" />
 </form>
 <br>
 ${message2}
@@ -96,15 +98,17 @@ ${message2}
 <th>${productLength2}</th>
 <th>${productPrice2}</th>
 
- <tr><c:forEach items="${descriptionMatchProductList}" var="product">
+<c:forEach items="${descriptionMatchProductList}" var="product">
+  <tr>
  	<td>${product.id}</td>
  	<td>${product.name}</td>
  	<td>${product.description}</td>
  	<td>${product.weight}</td>
  	<td>${product.length}</td>
  	<td>${product.price}</td>
+ 	 </tr>
  </c:forEach>
- </tr>
+
  </table>
 </body>
 </html>
