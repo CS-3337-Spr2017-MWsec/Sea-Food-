@@ -26,11 +26,23 @@ Product Weight: <input type="text" name="productWeight" value=${param.productWei
 
 Product Length: <input type="text" name="productLength" value=${param.productLength}>
 <br>
+<br>
 <input type="submit" name="submit" value="submit"/>
 
 </form>
 
 <br>
 ${message}
+<br>
+<br>
+
+<br>
+<a href="AddProductController">Add New Product</a>
+<br>
+<br>
+<a href="EditProductController">Edit Product</a>
+<br>
+<br>
+<a href="DeleteProductController">Delete Product</a>
 </body>
 </html>

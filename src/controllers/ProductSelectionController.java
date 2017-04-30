@@ -142,16 +142,13 @@ public class ProductSelectionController extends HttpServlet {
 package controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -163,15 +160,15 @@ import javax.servlet.http.HttpSession;
 
 import models.ProductBean;
 
-
-@WebServlet("/ProductSelectionController")
+//@WebServlet("/LiveCamera/ProductSelectionController")
+@WebServlet("/Product/LiveCameraFeed")
 public class ProductSelectionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	public void init( ServletConfig config ) throws ServletException
     {
-        super.init( config );
+ 
 /*
         // create some test data for display
         ArrayList<ProductBean> listOfProducts = new ArrayList<ProductBean>();
@@ -256,9 +253,8 @@ public class ProductSelectionController extends HttpServlet {
 			}
 		}*/
      
+          //add prepared statement
           ResultSet rs = stmt.executeQuery("SELECT * FROM `products` WHERE `product_id`='"+searchProductCode+"'");
-          
-           
 
            while( rs.next() )
             {  

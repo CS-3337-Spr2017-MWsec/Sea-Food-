@@ -52,6 +52,15 @@ ${message}
  <br>
  <br>
  <br>
+ 
+ <br>
+<a href="AddProductController">Add New Product</a>
+<br>
+<br>
+<a href="EditProductController">Edit Product</a>
+<br>
+<br>
+<a href="DeleteProductController">Delete Product</a>
 
 <br>
 

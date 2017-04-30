@@ -23,7 +23,8 @@ import javax.servlet.http.HttpSession;
 import models.ProductBean;
 
 
-@WebServlet("/SearchDescriptionController")
+//@WebServlet("/SearchDescriptionController")
+@WebServlet("/Product/SearchDescription")
 public class SearchDescriptionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -68,7 +69,7 @@ public class SearchDescriptionController extends HttpServlet {
 		
 		boolean validSearchString = false;
 				
-		if(searchProductDescription != null && searchProductDescription.trim().length() > 0)
+		if(searchProductDescription != null && searchProductDescription.trim().length() > 0 && searchProductDescription != "")
 			validSearchString = true;
 
 		if(validSearchString)
@@ -127,9 +128,8 @@ public class SearchDescriptionController extends HttpServlet {
 	        }
 		}
 
-        //for products that exist but aren't in stock, display message to user
-		if(found == true && stock == false)
-			request.setAttribute("message2", "Looks like there aren't any products in stock with that contain: " + searchProductDescription);
+		if (!validSearchString)
+			request.setAttribute("message2", "Please enter a valid search.");		
 		
 		//for products in stock, display message to user
 		else if(found == true && stock == true)
@@ -149,8 +149,10 @@ public class SearchDescriptionController extends HttpServlet {
 			request.setAttribute("message2", "We couldn't find anything with product description containing: " + searchProductDescription);
 		}
 		
-		else if (!validSearchString)
-			request.setAttribute("message2", "Please enter a valid search.");
+		
+		//for products that exist but aren't in stock, display message to user
+		else if(found == true && stock == false && validSearchString == true)
+					request.setAttribute("message2", "Looks like there aren't any products in stock with that contain: " + searchProductDescription);
 			
 		request.setAttribute("descriptionMatchProductList", descriptionMatchProductList);
 		doGet(request, response);

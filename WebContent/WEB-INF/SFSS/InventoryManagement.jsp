@@ -8,12 +8,15 @@
 <title>Inventory Management for SFSS</title>
 </head>
 <body>
-
-Main JSP for adding, editing & deleting products.
+<h1>Inventory Management</h1>
+<br>
+<a href="AddProductController">Add New Product</a>
 <br>
 <br>
-Need to add links for different operations. 
+<a href="EditProductController">Edit Product</a>
 <br>
+<br>
+<a href="DeleteProductController">Delete Product</a>
 
 </body>
 </html>
