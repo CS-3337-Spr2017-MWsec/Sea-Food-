@@ -17,10 +17,12 @@ public class ToggleRemoveController extends HttpServlet {
 	
 	protected ProductBean getProductBean(HttpServletRequest request, Integer id){
 		@SuppressWarnings("unchecked")
-		ArrayList<ProductBean> listOfProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfProducts");
+//		ArrayList<ProductBean> listOfProducts = (ArrayList<ProductBean>) getServletContext().getAttribute("listOfProducts");
+		ArrayList<ProductBean> userProducts = (ArrayList<ProductBean>) request.getSession().getAttribute("userProducts");
 		
-		for(ProductBean product: listOfProducts){
+		for(ProductBean product: userProducts){
 			if(id.equals(product.getId())){
+				System.out.println("This ran from ToggleRemoveController!");
 				return product;
 			}
 		}

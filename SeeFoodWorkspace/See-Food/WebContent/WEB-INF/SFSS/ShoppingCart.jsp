@@ -21,8 +21,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 <meta name="author" content="">
 <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-<link href="${pageContext.request.contextPath}/assets/css/bootstrap.css"
-	rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
 
 
 <!-- Custom styles for this template -->
@@ -35,14 +34,16 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 
-<title><c:choose>
+<title>
+	<c:choose>
 		<c:when test="${not empty username}">
 			${username}'s Shopping Cart
 		</c:when>
 		<c:otherwise>
 			Guest's Shopping Cart
 		</c:otherwise>
-	</c:choose></title>
+	</c:choose>
+</title>
 </head>
 
 
@@ -51,13 +52,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="SeeFoodController">See-Food</a>
 			</div>
+			
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="ProductSelectionController">Market</a></li>
@@ -75,7 +77,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 	<c:choose>
 		<c:when test="${empty userProducts}">
-
 			<div id="ww">
 				<div class="container">
 					<div class="row">
@@ -84,13 +85,9 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 							<h1>There is nothing in your Shopping Cart!</h1>
 							<img src="https://media.giphy.com/media/KZZt2LROglZSw/giphy.gif">
 						</div>
-						<!-- /col-lg-8 -->
 					</div>
-					<!-- /row -->
 				</div>
-				<!-- /container -->
 			</div>
-
 		</c:when>
 
 		<c:otherwise>
@@ -106,7 +103,8 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					</p>
 
 					<c:forEach items="${userProducts}" var="product">
-						<li><c:choose>
+						<!-- <li> -->
+						<c:choose>
 								<c:when test="${product.delete}">
 									<!-- If product object is marked for removal. -->
 									<div style="">
@@ -123,36 +121,30 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 								<c:otherwise>
 									<!-- Otherwise, remove from removal. -->
 									<div style="">
-										<strong>${product.name}</strong><br /> <em>${product.description}</em><br />
-										<br /> Weight: <strong>${product.weight}</strong><br />
-										Length: <strong>${product.length}</strong><br />
-										<form action="OrderController" method="POST">
-											<input type="hidden" name="id" value="${product.id}">
-											<input type="hidden" name="name" value="${product.name}">
-											<input type="hidden" name="desc"
-												value="${product.description}"> <input type="hidden"
-												name="weight" value="${product.weight}"> <input
-												type="hidden" name="length" value="${product.length}">
-										</form>
-										<br /> Total: <em>$${product.price} <strong>per
-												pound</strong></em><br /> Amount in cart: <select name="itemQuantity">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select>&emsp;
-
+										<strong>${product.name}</strong>
+										<br/>
+										<em>${product.description}</em>
+										<br/>
+										<br/>
+										Weight: <strong>${product.weight}</strong>
+										<br/>
+										Length: <strong>${product.length}</strong>
+										<br/>
+										<br/>
+										Price: <em>$${product.price}<strong> per	pound</strong></em>
+										<br/>
+										Amount in cart: 1
+										<br/>
 										<!-- ORIGINAL Total: <em>$${product.price}</em> -->
-										<a href="ToggleRemoveController?id=${product.id}">Delete</a><br />
+										<a href="ToggleRemoveController?id=${product.id}">Delete</a>
 										<hr />
 									</div>
 								</c:otherwise>
-							</c:choose></li>
+							</c:choose>
+							<!-- </li> -->
 					</c:forEach>
 
-					<a href="SeeFoodController">Continue shopping</a> &emsp; <input
-						type="submit" value="Checkout">
+					<a href="SeeFoodController">Continue shopping</a> &emsp;<a href="OrderController"><button>Checkout</button></a>
 				</div>
 			</div>
 		</c:otherwise>
@@ -206,9 +198,5 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 	<script src="assets/js/bootstrap.min.js"></script>
-
-
-
-
 </body>
 </html>

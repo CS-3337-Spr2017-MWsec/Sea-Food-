@@ -39,10 +39,10 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="SeeFoodController">See-Food</a>
 			</div>
@@ -69,7 +69,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 			<div style="text-align: left;"></div>
 			<!-- <h1>Hello, ${username}!</h1> -->
 			<header>
-			<h3>Hello, ${username}!</h3>
+				<h3>Hello, ${username}!</h3>
 			</header>
 			<a href="LoginController?logout=true"><button>Log Out</button></a>&emsp;
 			<a href="ShoppingCartController"><button>Shopping Cart</button></a>
@@ -99,7 +99,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 				<div style="float: right;">
-					<!--
+	<!--
 	NEW YT Account for webcamera.
 	
 	ORIGINAL
@@ -111,8 +111,8 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	frameborder="0" allowfullscreen></iframe>
 	-->
 					<iframe width="560" height="315"
-						src="https://www.youtube.com/embed/G14pCtS9MI4" frameborder="0"
-						allowfullscreen></iframe>
+						src="https://www.youtube.com/embed/G14pCtS9MI4" frameborder="0" allowfullscreen>
+					</iframe>
 
 					<br /> <a href="ProductSelectionController">Come and see what
 						we've got!</a> <br />
@@ -133,11 +133,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 							<h4>
 								<em>*${product.description}</em>
 							</h4>
-							<br /> Amount in stock: ${product.stock}&emsp; Price per pound:
-							<em>$${product.price}</em>&emsp; Weight: <em>${product.weight}</em>&emsp;
-							Length: <em>${product.length}</em><br /> <a
-								href="ShoppingCartController?id=${product.id}"><button>Add
-									to Shopping Cart</button></a>
+							<br />
+							Amount in stock: ${product.stock}&emsp;<br/>
+							Price per pound: <em>$${product.price}</em>&emsp;
+							Weight: <em>${product.weight}</em>&emsp;
+							Length: <em>${product.length}</em><br />
+							<a href="ShoppingCartController?id=${product.id}" class="btn btn-default">
+								<button>Add to Shopping Cart</button>
+							</a>
 						</div>
 					</div>
 				</c:forEach>
@@ -156,9 +159,9 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<h4>My Bunker</h4>
+					<h4>Our Bunker</h4>
 					<p>
-						CSULA, <br />
+						CSULA<br />
 					</p>
 				</div>
 				<!-- /col-lg-4 -->
@@ -188,9 +191,5 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	</div>
 
 	<script src="assets/js/bootstrap.min.js"></script>
-
-
-
-
 </body>
 </html>

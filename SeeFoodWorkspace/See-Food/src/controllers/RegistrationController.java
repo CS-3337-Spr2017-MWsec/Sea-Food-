@@ -103,7 +103,8 @@ public class RegistrationController extends HttpServlet {
 				
 //				request.getServletContext().setAttribute("noBilling", null); //TESTING.
 				request.getServletContext().setAttribute("listOfCustomers", listOfCustomers);
-				request.getServletContext().setAttribute("userProducts", new ArrayList<ProductBean>());
+//				request.getServletContext().setAttribute("userProducts", new ArrayList<ProductBean>());
+				request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
 				response.sendRedirect("SeeFoodController");
 			}else{
 				doGet(request, response);

@@ -21,14 +21,15 @@ public class LoginController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean logout = request.getParameter("logout") != null;
 		
-		@SuppressWarnings("unchecked")
-		ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) getServletContext().getAttribute("listOfCustomers");
+//		@SuppressWarnings("unchecked")
+//		ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) getServletContext().getAttribute("listOfCustomers");
 		
 		if(logout){
 			request.getSession().invalidate();
 		}
 		
-		getServletContext().setAttribute("listOfCustomers", listOfCustomers);
+		//TODO Validate a user to add to cart when they log in.
+//		getServletContext().setAttribute("listOfCustomers", listOfCustomers);
 		request.getRequestDispatcher("/WEB-INF/SFSS/Homepage.jsp").forward(request, response);
 	}
 	
@@ -38,22 +39,26 @@ public class LoginController extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) getServletContext().getAttribute("listOfCustomers");
+//		ArrayList<CustomerBean> listOfCustomers = (ArrayList<CustomerBean>) request.getSession().getAttribute("listOfCustomers");
+		
 		CustomerBean customer = null;
 		
 		for(CustomerBean currCustomer: listOfCustomers){
 			if(currCustomer.getUsername().equals(username) && currCustomer.getPassword().equals(password)){
 				customer = currCustomer;
-				
-				request.getSession().setAttribute("username", username);
-				request.getSession().setAttribute("listOfCustomers", listOfCustomers);
-//				request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
-				request.getServletContext().setAttribute("userProducts", new ArrayList<ProductBean>()); 
-				
-				response.sendRedirect("SeeFoodController");
 			}
 		}
 		
-		if(customer == null){
+		if(customer != null){
+			request.getSession().setAttribute("username", username);
+			request.getSession().setAttribute("listOfCustomers", listOfCustomers);
+			//OG.
+//			request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
+//			request.getServletContext().setAttribute("userProducts", new ArrayList<ProductBean>());
+			request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
+			
+			response.sendRedirect("SeeFoodController");
+		}else if(customer == null){
 			doGet(request, response);
 		}
 	}
