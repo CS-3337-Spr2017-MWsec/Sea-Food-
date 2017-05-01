@@ -35,7 +35,37 @@ Product Length: <input type="text" name="productLength" value=${param.productLen
 ${message}
 <br>
 <br>
+<form action="ViewAllAddController" method="post">
+<input type="hidden" name="viewAllProductsDelete" value="param.viewAllProductsDelete">
+<input type="submit" name="submit" value="View All Products">
+</form>
 
+<br>
+<br>
+<table>
+<th>${productCode}</th>
+<th>${productName}</th>
+<th>${productDescription}</th>
+<th>${productWeight}</th>
+<th>${productLength}</th>
+<th>${productPrice}</th>
+
+
+<c:forEach items="${viewAllProductsList}" var="product">
+ <tr>
+ 	<td>${product.id}</td>
+ 	<td>${product.name}</td>
+ 	<td>${product.description}</td>
+ 	<td>${product.weight}</td>
+ 	<td>${product.length}</td>
+ 	<td>${product.price}</td>
+ 	<td>
+
+ 	</td>
+ </tr>
+ </c:forEach>
+ </table>
+<br>
 <br>
 <a href="AddProductController">Add New Product</a>
 <br>

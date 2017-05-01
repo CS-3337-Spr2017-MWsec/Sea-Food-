@@ -22,6 +22,13 @@ ${message}
 <br>
 
 <br>
+<form action="ViewAllDeleteController" method="post">
+<input type="hidden" name="viewAllProductsDelete" value="param.viewAllProductsDelete">
+<input type="submit" name="submit" value="View All Products">
+</form>
+
+<br>
+<br>
 <table>
 <th>${productCode}</th>
 <th>${productName}</th>
@@ -29,6 +36,23 @@ ${message}
 <th>${productWeight}</th>
 <th>${productLength}</th>
 <th>${productPrice}</th>
+
+
+<c:forEach items="${viewAllProductsList}" var="product">
+ <tr>
+ 	<td>${product.id}</td>
+ 	<td>${product.name}</td>
+ 	<td>${product.description}</td>
+ 	<td>${product.weight}</td>
+ 	<td>${product.length}</td>
+ 	<td>${product.price}</td>
+ 	<td>
+ <a href="DeleteProductButtonController?id=${product.id}"><button>Delete Product</button></a>
+
+ 	</td>
+ </tr>
+ </c:forEach>
+
 
 <c:forEach items="${deleteProductList}" var="product">
  <tr>
@@ -51,9 +75,7 @@ ${message}
  
  <br>
  <br>
- <br>
- 
- <br>
+
 <a href="AddProductController">Add New Product</a>
 <br>
 <br>
