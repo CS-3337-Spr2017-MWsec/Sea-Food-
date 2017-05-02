@@ -1,5 +1,3 @@
-
-<%--
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -30,12 +28,11 @@
 
 <title>Product Selection</title>
 </head>
---%>
 
 
 
 
-
+<%-- TEST.
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -43,115 +40,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!--
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
--->
+--%>
+
 <title>Product Selection</title>
 </head>
 <body>
-    <!--
-    Nate's YT Account <iframe width="560" height="315"
-    <iframe style="float:right;" width="560" height="315" 
-    src="https://www.youtube.com/embed/live_stream?channel=UCEXqq00s8jq7fqKLQixJ-Iw&autoplay=1"
-    frameborder="0" allowfullscreen></iframe>
-    -->
-    
-    <!--
-    NEW YT Account for webcamera.
-    -->
-    
-    <!-- CAMERA. -->
-                <iframe width="854" height="480" src="https://www.youtube.com/embed/-8XpJD7UShw" 
-                frameborder="0" allowfullscreen></iframe>
-                </iframe>
-                <br>
-                <br>
-                <br>
-    <!-- <iframe style="float:center;" width="560" height="315"
-    src=" https://www.youtube.com/embed/live_stream?channel=UCae3AP4kpj9yRx5C2e100Ng&autoplay=1"
-    frameborder="0" allowfullscreen></iframe> -->
-    <!-- NON-VIDEO STREAM
-    src="https://www.youtube.com/watch?v=4RUGmBxe65U"
-    -->
-    <%-- TEST
-    <c:choose>
-        <c:when test="${empty isNull}">
-    --%>
-    <br>
-    See something you like? Enter a product code to get more detailed information!
-    <br>
-    <br>
-    <br>
-<form action="ProductSelectionController" method="post">  
-Search by Product Code: 
-<input type="text" name="searchProductCode"  placeholder="Enter a search query" value=${param.searchProductCode}>
-<input type="submit" name="submit" value="Submit" />
-</form>
-<br>
-${message}
-<br>
-<br>
-<table>
-<th>${productCode}</th>
-<th>${productName}</th>
-<th>${productDescription}</th>
-<th>${productWeight}</th>
-<th>${productLength}</th>
-<th>${productPrice}</th>
-<c:forEach items="${filteredListOfProducts}" var="product">
- <tr>
-    <td>${product.id}</td>
-    <td>${product.name}</td>
-    <td>${product.description}</td>
-    <td>${product.weight}</td>
-    <td>${product.length}</td>
-    <td>${product.price}</td>
- </tr>
- </c:forEach>
- </table>
-<br>
- <form action="SearchDescriptionController" method="post">  
-Search Product Descriptions: 
-<input type="text" name="searchProductDescription" value=${param.searchProductDescription}>
-<input type="submit" name="submit" value="Submit" />
-</form>
-<br>
-${message2}
-<br>
-<br>
-<table>
-<th>${productCode2}</th>
-<th>${productName2}</th>
-<th>${productDescription2}</th>
-<th>${productWeight2}</th>
-<th>${productLength2}</th>
-<th>${productPrice2}</th>
-<c:forEach items="${descriptionMatchProductList}" var="product">
-  <tr>
-    <td>${product.id}</td>
-    <td>${product.name}</td>
-    <td>${product.description}</td>
-    <td>${product.weight}</td>
-    <td>${product.length}</td>
-    <td>${product.price}</td>
-     </tr>
- </c:forEach>
- </table>
-</body>
-</html>
 
-
-
-
-
-
-
-
-
-<%--
-<body>
-	<div class="navbar navbar-inverse navbar-static-top">
+<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -173,63 +68,104 @@ ${message2}
 		</div>
 	</div>
 
-	<div id="grey">
-		<div class="container">
-			<center>
-				<h3>Product Search</h3>
-			</center>
 
-			<div class="row">
+    <!--
+    CAMERA.
+    -->
+    <center>
+		<iframe width="854" height="480" src="https://www.youtube.com/embed/-8XpJD7UShw" 
+		frameborder="0" allowfullscreen></iframe>
+		</iframe>
+    </center>
+    
+    
+    
+    <br>
+    See something you like? Enter a product code to get more detailed information!
+    <br>
+    <br>
+    <br>
+    
+    
+<div id="grey">
+	<div class="container">
+		<center>
+			<h3>Product Search</h3>
+		</center>
+		
+		<div class="row">
 				<br />
-				<form action="ProductSelectionController" method="POST">
-					<c:if test="${not empty errorMsg}">
-						<p style="color: red;">${errorMsg}</p>
-					</c:if>
-					Search by Product Code: <input type="text" name="searchProductCode"
-						placeholder="Enter a search query"> <input type="submit"
-						value="Submit">
-				</form>
-				<br />
-				<center>
-				<!-- CAMERA. -->
-				<iframe width="560" height="315" 
-				src="https://www.youtube.com/embed/-8XpJD7UShw" 
-				frameborder="0" allowfullscreen>
-				</iframe>
-
-				</center>
-				${message} <br />
-
-				<table>
-					<tr>
-						<th>${productCode}</th>
-						<th>${productName}</th>
-						<th>${productDescription}</th>
-						<th>${productWeight}</th>
-						<th>${productLength}</th>
-						<th>${productPrice}</th>
-					</tr>
-
-					<c:if test="${not empty isNull}">
-						<c:forEach items="${filteredListOfTestProducts}" var="product">
-							<tr>
-								<td>${product.id}</td>
-								<td>${product.name}</td>
-								<td>${product.description}</td>
-								<td>${product.weight}</td>
-								<td>${product.length}</td>
-								<td>${product.price}</td>
-							</tr>
-							<tr></tr>
-						</c:forEach>
-					</c:if>
-				</table>
-				<br /> <a href="SeeFoodController">Home</a>
-			</div>
+    
+    
+<form action="ProductSelectionController" method="post">  
+Search by Product Code: 
+<input type="text" name="searchProductCode"  placeholder="Enter a search query" value=${param.searchProductCode}>
+<input type="submit" name="submit" value="Submit" />
+</form>
+<br>
+${message}
+<br>
+<br>
+<table>
+<thead>
+<tr>
+	<th>${productCode}</th>
+	<th>${productName}</th>
+	<th>${productDescription}</th>
+	<th>${productWeight}</th>
+	<th>${productLength}</th>
+	<th>${productPrice}</th>
+</tr>
+</thead>
+<c:forEach items="${filteredListOfProducts}" var="product">
+ <tr>
+    <td>${product.id}</td>
+    <td>${product.name}</td>
+    <td>${product.description}</td>
+    <td>${product.weight}</td>
+    <td>${product.length}</td>
+    <td>${product.price}</td>
+ </tr>
+ </c:forEach>
+ </table>
+<br>
+ <form action="SearchDescriptionController" method="post">  
+Search Product Descriptions: 
+<input type="text" name="searchProductDescription" value="${param.searchProductDescription}">
+<input type="submit" name="submit" value="Submit" />
+</form>
+<br>
+${message2}
+<br>
+<br>
+<table>
+<thead>
+	<tr>
+		<th>${productCode2}</th>
+		<th>${productName2}</th>
+		<th>${productDescription2}</th>
+		<th>${productWeight2}</th>
+		<th>${productLength2}</th>
+		<th>${productPrice2}</th>
+	</tr>
+</thead>
+<c:forEach items="${descriptionMatchProductList}" var="product">
+	<tr>
+	    <td>${product.id}</td>
+	    <td>${product.name}</td>
+	    <td>${product.description}</td>
+	    <td>${product.weight}</td>
+	    <td>${product.length}</td>
+	    <td>${product.price}</td>
+	</tr>
+ </c:forEach>
+ </table>
+ 
+</div>
 		</div>
 	</div>
-
-	<!-- footer -->
+ 
+ <!-- footer -->
 	<div id="footer">
 		<div class="container">
 			<div class="row">
@@ -259,10 +195,32 @@ ${message2}
 
 						<!-- /col-lg-4 -->
 				</div>
-
 			</div>
 		</div>
 	</div>
+ 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<%--
+<body>
+	
+
+
+
+
+	==========
+	FROM HERE.
+	==========
 --%>
 
 
