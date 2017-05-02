@@ -25,14 +25,12 @@
 <script src="assets/js/hover.zoom.js"></script>
 <script src="assets/js/hover.zoom.conf.js"></script>
 
-<title><c:choose>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<title>
-	
+<title>
 	<c:choose>
 		<c:when test="${not empty username}">
 			${username}'s Shopping Cart
@@ -40,10 +38,8 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		<c:otherwise>
 			Guest's Shopping Cart
 		</c:otherwise>
-	</c:choose></title>
 	</c:choose>
-	
-	</title>
+</title>	
 </head>
 
 
@@ -159,6 +155,17 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		<a href="SeeFoodController">Continue shopping</a>
 	</c:if>
 
+
+
+
+<!-- ======================================================================================================================================== -->
+
+<!-- POSSIBLE TRASHED CODE DOWN BELOW -->
+
+<!-- ======================================================================================================================================== -->
+
+
+<%--
 	<c:choose>
 		<c:when test="${empty userProducts}">
 			<h2>There is nothing in your Shopping Cart!</h2><br/>
@@ -252,12 +259,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<h4>About See-Food</h4>
 					<p>
 						Put your heart, mind, and soul into even your smallest acts. This
-						is the secret of success.&emsp;- Swami Sivananda
+						is the secret of success.<br/>- Swami Sivananda
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script src="assets/js/bootstrap.min.js"></script>
+--%>
+
 </body>
 </html>

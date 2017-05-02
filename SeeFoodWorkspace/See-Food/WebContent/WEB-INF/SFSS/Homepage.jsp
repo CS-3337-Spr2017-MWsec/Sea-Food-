@@ -24,11 +24,6 @@
 <script src="assets/js/hover.zoom.js"></script>
 <script src="assets/js/hover.zoom.conf.js"></script>
 
-<!--  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
--->
 <title>Welcome to SFSS!</title>
 <body>
 
@@ -52,7 +47,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				</ul>
 
 			</div>
-			<!--/.nav-collapse -->
 		</div>
 	</div>
 
@@ -61,9 +55,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	
 	<c:if test="${not empty username}">
 		<div class='jumbotron' style="text-align:right;">
-			<div style="text-align:left;">
-				<h4><em>*All descriptions of each product are from Wikipedia.</em></h4>
-			</div>
 			<!-- <h1>Hello, ${username}!</h1> -->
 			<header><h1>Hello, ${username}!</h1></header>
 			<a href="LoginController?logout=true"><button>Log Out</button></a>&emsp;
@@ -72,8 +63,15 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	</c:if>
 	<c:if test="${empty username}">
 		<div class='jumbotron' style="text-align: right;">
-
+			<header><h1>Hello!</h1></header>
 			Have an account?
+			
+			<a href="UserLogin">Log in</a>&emsp;
+			
+			<!--
+			=================
+				   OG.
+			=================
 			<form action="LoginController" method="POST">
 				<label>Username: </label> <input type="text" name="username"
 					placeholder="Enter your username" /><br /> <label>Password: </label>  <input
@@ -81,6 +79,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				<input type="submit" value="Log in" />&emsp; <a
 					href="ShoppingCartController"><button>Shopping Cart</button></a>
 			</form>
+			-->
 
 			Don't have an account? <a href="RegistrationController">Sign up!</a>
 		</div>
@@ -103,7 +102,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	</div>
 
 				<!-- LISTINGS OF PRODUCTS BELOW. -->
-				<!-- TEST -->
 				<c:forEach items="${listOfProducts}" var="product">
 					<div style="text-align: left;">
 						<div style="">
@@ -160,17 +158,20 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<h4>About See-Food</h4>
 					<p>
 						Put your heart, mind, and soul into even your smallest acts. This
-						is the secret of success. - Swami Sivananda
-
-
-						<!-- /col-lg-4 -->
+						is the secret of success.<br/> - Swami Sivananda
 				</div>
-
 			</div>
 		</div>
-
 	</div>
 
+
+<!-- ======================================================================================================================================== -->
+
+<!-- POSSIBLE TRASHED CODE DOWN BELOW -->
+
+<!-- ======================================================================================================================================== -->
+
+<%--
 	<script src="assets/js/bootstrap.min.js"></script>
 
 
@@ -217,5 +218,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</div>
 		<hr/>
 	</c:forEach>
+	--%>
 </body>
 </html>
