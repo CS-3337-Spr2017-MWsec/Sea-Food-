@@ -62,9 +62,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</div>
 	</div>
 
-	<!-- CAMERA. -->
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/-8XpJD7UShw" frameborder="0" allowfullscreen></iframe>
-
+	
 
 	<div id="grey">
 		<div class="container">
@@ -84,9 +82,9 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				</form>
 				<br />
 				<center>
-					<iframe width="560" height="315"
-						src="https://www.youtube.com/embed/G14pCtS9MI4" frameborder="0"
-						allowfullscreen></iframe>
+					<!-- CAMERA. -->
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/-8XpJD7UShw" frameborder="0" allowfullscreen></iframe>
+
 				</center>
 				<%-- TEST	
 		</c:when>
