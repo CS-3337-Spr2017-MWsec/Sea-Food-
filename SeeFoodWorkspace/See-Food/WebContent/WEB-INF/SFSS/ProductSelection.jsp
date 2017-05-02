@@ -16,8 +16,7 @@
 <meta name="author" content="">
 <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-<link href="${pageContext.request.contextPath}/assets/css/bootstrap.css"
-	rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
 
 
 <!-- Custom styles for this template -->
@@ -27,17 +26,8 @@
 <script src="assets/js/hover.zoom.js"></script>
 <script src="assets/js/hover.zoom.conf.js"></script>
 
-
-<!--
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
--->
-
 <title>Product Selection</title>
 </head>
-
-
-
 <body>
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
@@ -58,11 +48,8 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<li><a href="">Register</a></li>
 				</ul>
 			</div>
-			<!--/.nav-collapse -->
 		</div>
 	</div>
-
-	
 
 	<div id="grey">
 		<div class="container">
@@ -82,15 +69,13 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				</form>
 				<br />
 				<center>
-					<!-- CAMERA. -->
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/-8XpJD7UShw" frameborder="0" allowfullscreen></iframe>
+				<!-- CAMERA. -->
+				<iframe width="560" height="315" 
+				src="https://www.youtube.com/embed/-8XpJD7UShw" 
+				frameborder="0" allowfullscreen>
+				</iframe>
 
 				</center>
-				<%-- TEST	
-		</c:when>
-	
-		<c:otherwise>
-	--%>
 				${message} <br />
 
 				<table>
@@ -114,28 +99,13 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 								<td>${product.price}</td>
 							</tr>
 							<tr></tr>
-
-							<!--
-					Product ID: ${product.id}
-					Product Name: ${product.name}
-					Product Description: ${product.description}
-					Product Weight: ${product.weight}
-					Product Length: ${product.length}
-					Product Price: ${product.price}
-				
-				-->
 						</c:forEach>
 					</c:if>
 				</table>
 				<br /> <a href="SeeFoodController">Home</a>
-				<%-- TEST
-		</c:otherwise>
-	</c:choose>
-	--%>
 			</div>
 		</div>
 	</div>
-
 
 	<!-- footer -->
 	<div id="footer">
@@ -170,12 +140,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 			</div>
 		</div>
-
 	</div>
-
-
-
-
 	<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
