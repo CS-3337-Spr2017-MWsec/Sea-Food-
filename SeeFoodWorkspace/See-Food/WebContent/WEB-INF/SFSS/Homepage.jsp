@@ -89,18 +89,18 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	<div class="container pt">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
-				<h3>Products</h3>
+				<h3 style="text-align:left;">Products</h3>
 				<hr>
 
 
-				<div style="float: right;">
+	<div style="float: right;">
 
 	<!-- CAMERA. -->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mTquHtU-pJI" frameborder="0" allowfullscreen></iframe>
 	
 					<br /> <a href="ProductSelectionController">Come and see what
 						we've got!</a> <br />
-				</div>
+	</div>
 
 				<!-- LISTINGS OF PRODUCTS BELOW. -->
 				<!-- TEST -->
@@ -142,7 +142,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 				<div class="col-lg-4">
 					<h4>My Bunker</h4>
 					<p>
-						CSULA, <br />
+						CSULA<br />
 					</p>
 				</div>
 				<!-- /col-lg-4 -->
