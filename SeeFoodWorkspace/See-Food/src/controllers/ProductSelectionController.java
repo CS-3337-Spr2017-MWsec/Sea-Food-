@@ -3,7 +3,6 @@ package controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,7 +24,7 @@ public class ProductSelectionController extends HttpServlet {
         //Create some test data for display.
         ArrayList<ProductBean> listOfTestProducts = new ArrayList<ProductBean>();
         
-        listOfTestProducts.add(new ProductBean("Cape Lobster", 
+        listOfTestProducts.add(new ProductBean(1000, "Cape Lobster", 
 				"The Cape lobster, Homarinus capensis, is a species of small lobster\n "
 				+ "that lives off the coast of South Africa, from Dassen Island to\n "
 				+ "Haga Haga. Only a few dozen specimens are known, mostly regurgitated\n "
