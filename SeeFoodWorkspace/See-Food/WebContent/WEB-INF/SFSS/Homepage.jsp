@@ -30,7 +30,6 @@
 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 -->
 <title>Welcome to SFSS!</title>
-</head>
 <body>
 
 	<div class="navbar navbar-inverse navbar-static-top">
@@ -57,25 +56,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		</div>
 	</div>
 
-
-	<!-- TODO Requires checking of valid user. -->
-	<!-- If there is a user logged in, display username, else display 'Hello!` only and without `logout`. -->
-
-	<c:if test="${not empty username}">
-		<div class='jumbotron' style="text-align: right;">
-			<div style="text-align: left;"></div>
-			<!-- <h1>Hello, ${username}!</h1> -->
-			<header>
-			<h3>Hello, ${username}!</h3>
-			</header>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<title>Welcome to SFSS!</title>
-</head>
-<body>
 	<!-- TODO Requires checking of valid user. -->
 	<!-- If there is a user logged in, display username, else display 'Hello!` only and without `logout`. -->
 	
@@ -195,7 +175,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 
-
+	<c:if test="${empty username}">
 		<div class='jumbotron' style="text-align:right;">
 			<div style="text-align:left;">
 				<h4><em>*All descriptions of each product are from Wikipedia.</em></h4>
