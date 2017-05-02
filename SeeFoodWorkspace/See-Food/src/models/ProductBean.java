@@ -24,6 +24,19 @@ public class ProductBean {
 		this.length = length;
 	}
 	
+//	new ProductBean(rs.getInt("product_id"), rs.getString("name"), rs.getString("description"), 
+//			   rs.getInt("quantity"), rs.getDouble("price"), rs.getDouble("weight"), rs.getDouble("length"));
+	public ProductBean(Integer id, String name, String description, int stock, double price, double weight, double length){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.stock = stock;
+        this.delete = false;
+        this.price = price;
+        this.weight = weight;
+        this.length = length;
+    }
+	
 	public Integer getId(){
 		return id;
 	}
