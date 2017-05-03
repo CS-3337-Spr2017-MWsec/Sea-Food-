@@ -44,12 +44,15 @@ public class LoginController extends HttpServlet {
 			if(currCustomer.getUsername().equals(username) && currCustomer.getPassword().equals(password)){
 				customer = currCustomer;
 				
+				listOfCustomers.add(customer);
+				
 				request.getSession().setAttribute("username", username);
 				request.getSession().setAttribute("listOfCustomers", listOfCustomers);
 //				request.getSession().setAttribute("userProducts", new ArrayList<ProductBean>());
 				request.getServletContext().setAttribute("userProducts", new ArrayList<ProductBean>()); 
 				
 				response.sendRedirect("SeeFoodController");
+				break;
 			}
 		}
 		
