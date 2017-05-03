@@ -71,10 +71,11 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<h4>We just need your:</h4>
 					<form action="RegistrationController" method="POST">
 						<div class="col-sm-12">
-							<img src="http://clipart-library.com/images/qcBALMeni.gif"
-								style="position: absolute; top: -15px; right: 0px;" width="350"
-								max-width: 100%; height: auto;
-								height="350">
+							<iframe src="//giphy.com/embed/odwOXY8XpcYWQ" width="480"
+								height="270" frameBorder="0" class="giphy-embed"
+								style="position: absolute; top: -15px; right: 0px;"></iframe>
+
+
 						</div>
 
 						<div class="col-sm-12">
