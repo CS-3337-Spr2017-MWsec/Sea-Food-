@@ -38,8 +38,6 @@
 					<li><a href="ProductSelectionController">Market</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="ShoppingCartController">Shopping Cart</a></li>
-				
-	
 				</ul>
 			</div>
 		</div>
@@ -51,8 +49,8 @@
     <div class="container pt">
         <div class="row mt">
             <div class="col-lg-6 col-lg-offset-3 centered">
-                <h3>CONTACT US</h3>
-                <hr>
+                 <h3>Problems? Concerns? Comments?<br/>Burning Desires?</h3>
+                 <h4>We read'em all!</h4>
                
             </div>
         </div>
