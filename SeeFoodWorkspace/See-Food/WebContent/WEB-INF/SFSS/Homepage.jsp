@@ -86,7 +86,7 @@
 
 	<div class="container pt">
 		<div class="row mt">
-			<div class=""col-lg-6">
+			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3 style="text-align: left;">Products</h3>
 				<hr>
 
