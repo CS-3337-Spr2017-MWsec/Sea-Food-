@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ignore everything
 *
 
@@ -24,9 +23,9 @@
 =======
 #Ignore ALL files.
 *
+.DS_Store
 
 #Do NOT ignore these files.
 !.gitignore
 !SeeFoodWorkspace/See-Food/src/**
 !SeeFoodWorkspace/See-Food/WebContent/WEB-INF/SFSS/**
->>>>>>> fc9421858f2cf937e005d188e2e2980db3959a56
