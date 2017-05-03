@@ -151,7 +151,7 @@
 			</div>
 		</div>
 		
-		<a href="SeeFoodController">Go back</a>
+		<a href="SeeFoodController">Home</a>
 	</div>
 
 	<!-- footer -->

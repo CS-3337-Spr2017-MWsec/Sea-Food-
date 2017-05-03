@@ -39,6 +39,7 @@
 					<li><a href="ProductSelectionController">Market</a></li>
 					<li><a href="About">About</a></li>
 					<li><a href="ShoppingCartController">Shopping Cart</a></li>
+					<li><a href="Contact">Contact</a></li>
 					<li><a href="RegistrationController">Register</a></li>
 
 
@@ -73,6 +74,8 @@
 			<!-- /row -->
 		</div>
 		<!-- /container -->
+		
+		<a href="SeeFoodController">Home</a>
 	</div>
 
 
