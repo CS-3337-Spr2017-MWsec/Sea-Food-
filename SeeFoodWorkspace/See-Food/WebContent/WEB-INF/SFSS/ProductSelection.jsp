@@ -58,16 +58,17 @@
     CAMERA.
     -->
 	<center>
-		<div class='jumbotron' style="text-align: right;"> <!-- TEST -->
+		<div class='jumbotron' style="text-align: right;">
+			<!-- TEST -->
 			<img align="left"
-			src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png"
-			width="320" height="213">
-			
+				src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png"
+				width="320" height="213">
+
 			<iframe width="854" height="480"
 				src="https://www.youtube.com/embed/-8XpJD7UShw" frameborder="0"
 				allowfullscreen></iframe>
 			</iframe>
-	
+
 			<br> See something you like? Enter a product code to get more
 			detailed information! <br> <br> <br>
 		</div>
@@ -80,7 +81,7 @@
 			</center>
 
 			<div class="row">
-				<br/>
+				<br />
 
 
 				<form action="ProductSelectionController" method="post">
@@ -143,8 +144,8 @@
 					</c:forEach>
 				</table>
 			</div>
-			</div>
 		</div>
+	</div>
 
 	<!-- footer -->
 	<div id="footer">
@@ -153,16 +154,15 @@
 				<div class="col-lg-4">
 					<h4>My Bunker</h4>
 					<p>
-						CSULA<br/>
+						CSULA<br />
 					</p>
 				</div>
 
 				<div class="col-lg-4">
 					<h4>My Links</h4>
 					<p>
-						<a href="#">Dribbble</a><br/>
-						<a href="#">Twitter</a><br/>
-						<a href="#">Facebook</a>
+						<a href="#">Dribbble</a><br /> <a href="#">Twitter</a><br /> <a
+							href="#">Facebook</a>
 					</p>
 				</div>
 
@@ -170,11 +170,13 @@
 					<h4>About See-Food</h4>
 					<p>
 						Put your heart, mind, and soul into even your smallest acts. This
-						is the secret of success.<br/>-Swami Sivananda
+						is the secret of success.<br />-Swami Sivananda
 					</p>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

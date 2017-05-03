@@ -234,7 +234,7 @@
 	<c:if test="${empty userProducts}">
 		<a href="SeeFoodController">Continue shopping</a>
 	</c:if>
-	
+--%>	
 	<div id="footer">
 		<div class="container">
 			<div class="row">
@@ -264,7 +264,8 @@
 		</div>
 	</div>
 	<script src="assets/js/bootstrap.min.js"></script>
---%>
+
+
 
 </body>
 </html>
