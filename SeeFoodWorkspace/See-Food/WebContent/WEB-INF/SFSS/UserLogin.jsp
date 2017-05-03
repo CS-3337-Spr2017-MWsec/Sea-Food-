@@ -35,8 +35,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="SeeFoodController">SeeFood Service
-					Supreme</a>
+				<a class="navbar-brand" href="SeeFoodController">SeeFood Service Supreme</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -44,7 +43,7 @@
 					<li><a href="#">About</a></li>
 					<li><a href="ShoppingCartController">Shopping Cart</a></li>
 					<li><a href="">Contact</a></li>
-					<li><a href="">Register</a></li>
+	
 				</ul>
 			</div>
 		</div>
