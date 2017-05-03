@@ -16,10 +16,11 @@
 		<!--
 		TEST: SEEMS FINAL
 		-->
+
 		<iframe src="//giphy.com/embed/RVaqnLYmO79C0?hideSocial=true"
 			width="480" height="360" frameBorder="0" class="giphy-embed"
 			allowFullScreen></iframe>
-	
+
 		<!--
 		TEST NEW GIF
 		<img src="SeeFoodMascot.gif">
@@ -29,8 +30,9 @@
 		FINAL GIF
 		<img align="left" src="https://giphy.com/gifs/crab-RVaqnLYmO79C0" width="320" height="213">
 		-->
-
-		<a href="SeeFoodController">Continue to site</a>
+		<center>
+			<br /> <a href="SeeFoodController">Continue to site</a>
+		</center>
 	</div>
 </body>
 </html>
