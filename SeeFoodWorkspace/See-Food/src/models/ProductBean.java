@@ -12,8 +12,9 @@ public class ProductBean {
 	Double price;
 	Double weight;
 	Double length;
+	String url;
 	
-	public ProductBean(String name, String description, int stock, double price, double weight, double length){
+	public ProductBean(String name, String description, int stock, double price, double weight, double length, String url){
 		this.id = idCount++;
 		this.name = name;
 		this.description = description;
@@ -22,6 +23,7 @@ public class ProductBean {
 		this.price = price;
 		this.weight = weight;
 		this.length = length;
+		this.url = url;
 	}
 	
 	public ProductBean(Integer id, String name, String description, int stock, double price, double weight, double length){
@@ -93,5 +95,13 @@ public class ProductBean {
 	}
 	public void setLength(Double length){
 		this.length = length;
+	}
+	
+	public String getUrl(){
+		return url;
+	}
+	
+	public void setUrl(String url){
+		this.url = url;
 	}
 }
