@@ -56,25 +56,15 @@
 		<div class="col-lg-12 well">
 			<form action="LoginController" method="post">
 				<div class="col-sm-12">
-
 					<div class="row">
-						<label>Username: </label> <input type="text" name="username"
-							placeholder="Enter your username" class="form-control"
-							style="width: 300px;"><br />
+						<label>Username: </label> <input type="text" name="username" placeholder="Enter your username" class="form-control" style="width: 300px;"><br />
 					</div>
-				</div>
 
-				<div class="col-sm-12">
 					<div class="row">
-						<label>Password: </label> <input type="password" name="password1"
+						<label>Password: </label> <input type="password" name="password"
 							class="form-control" style="width: 300px;" /><br />
 					</div>
 				</div>
-
-
-<!-- 
-				<input type="text" name="username" placeholder="Enter username">
-				<input type="password" name="password" placeholder="Enter password">  -->
 				<input type="submit" value="Login">
 			</form>
 		</div>

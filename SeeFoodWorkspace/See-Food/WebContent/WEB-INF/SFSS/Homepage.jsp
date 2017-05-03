@@ -66,9 +66,7 @@
 			src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png"
 			width="320" height="213">
 			
-			<header>
-				<h1>Hello, ${username}!</h1>
-			</header>
+			<h1>Hello, ${username}!</h1>
 			<a href="LoginController?logout=true"><button>Log Out</button></a>&emsp;
 			<a href="ShoppingCartController"><button>Shopping Cart</button></a>
 		</div>
@@ -83,9 +81,7 @@
 			src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png"
 			width="320" height="213">
 			
-			<header>
-			<h1>Hello!</h1>
-			</header>
+			<h1>Hello, world!</h1>
 			Have an account? <a style="background-color:#ffffff;" href="UserLogin">Log in</a>&emsp; Don't have an
 			account? <a style="background-color:#ffffff;" href="RegistrationController">Sign up!</a>
 		</div>
