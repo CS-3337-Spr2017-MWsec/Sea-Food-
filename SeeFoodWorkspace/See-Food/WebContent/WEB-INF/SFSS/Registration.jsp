@@ -67,7 +67,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 			<h1>A new SFSS family member!</h1>
 			<div class="container">
 				<h2 class="well">Registration Form</h2>
-				<div class="col-lg-12 well">
+				<div style="background-color:#EFC7BF" class="col-lg-12 well">
 					<h4>We just need your:</h4>
 					<form action="RegistrationController" method="POST">
 						<div class="col-sm-12">
