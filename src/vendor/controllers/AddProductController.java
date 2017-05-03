@@ -22,7 +22,7 @@ public class AddProductController extends HttpServlet {
        
 	public void init( ServletConfig config ) throws ServletException
     {
-        super.init( config );
+        /*super.init( config );
 
         try
         {
@@ -31,7 +31,7 @@ public class AddProductController extends HttpServlet {
         catch( ClassNotFoundException e )
         {
             throw new ServletException( e );
-        }
+        }*/
     }
 
 
@@ -49,6 +49,9 @@ public class AddProductController extends HttpServlet {
 		String productPrice = request.getParameter("productPrice");
 		String productWeight= request.getParameter("productWeight");
 		String productLength = request.getParameter("productLength");
+		int productQuantity= Integer.parseInt(request.getParameter("productQuantity"));
+		
+		
 		
 		Boolean success = false;
 		
@@ -63,8 +66,9 @@ public class AddProductController extends HttpServlet {
             c = DriverManager.getConnection( url, username, password );
             Statement stmt = c.createStatement();
 		
-            int i = stmt.executeUpdate("insert into products(name, description, price, weight, length) "
-            		+ "values('"+productName+"','"+productDescription+"','"+productPrice+"','"+productWeight+"','"+productLength+"')");
+            int i = stmt.executeUpdate("insert into products(name, description, quantity, price, weight, length) "
+            		+ "values('"+productName+"','"+productDescription+"', '"+productQuantity+"', '"+productPrice+"',"
+            				+ "'"+productWeight+"','"+productLength+"')");
             
             if(i > 0)
             	success = true;

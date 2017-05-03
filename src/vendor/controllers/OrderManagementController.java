@@ -16,7 +16,18 @@ public class OrderManagementController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	public void init( ServletConfig config ) throws ServletException{
-    	super.init( config );
+    	
+    	/* super.init( config 
+    	);
+
+         try
+         {
+             Class.forName( "com.mysql.jdbc.Driver" );
+         }
+         catch( ClassNotFoundException e )
+         {
+             throw new ServletException( e );
+         }*/
 
     }
 

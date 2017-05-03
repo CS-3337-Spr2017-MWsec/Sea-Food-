@@ -160,8 +160,8 @@ import javax.servlet.http.HttpSession;
 
 import models.ProductBean;
 
-//@WebServlet("/LiveCamera/ProductSelectionController")
-@WebServlet("/Product/LiveCameraFeed")
+@WebServlet("/ProductSelectionController")
+//@WebServlet("/Product/LiveCameraFeed")
 public class ProductSelectionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -180,7 +180,7 @@ public class ProductSelectionController extends HttpServlet {
         getServletContext().setAttribute( "listOfProducts", listOfProducts );
         */
         
-        super.init( config );
+    super.init( config );
 
         try
         {

@@ -18,11 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 import models.ProductBean;
 
 
-@WebServlet("/ViewAllAddController")
-public class ViewAllAddController extends HttpServlet {
+@WebServlet("/ViewAllEditController")
+public class ViewAllEditController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public ViewAllAddController() {
+    public ViewAllEditController() {
         super();
 
     }
@@ -34,7 +34,7 @@ public class ViewAllAddController extends HttpServlet {
 
 		request.setAttribute("viewAllProductsList",viewAllProductsList);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/SFSS/AddProduct.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/SFSS/EditProduct.jsp");
 		dispatcher.forward(request, response);
 
 	}
@@ -57,14 +57,14 @@ public class ViewAllAddController extends HttpServlet {
 
 	          ResultSet rs = stmt.executeQuery("SELECT * FROM `products`");
 
-	           while( rs.next() )
-	            {  
+	          while( rs.next() )
+	          {  
 	            
 	        	   ProductBean product = new ProductBean(rs.getInt("product_id"), rs.getString("name"), rs.getString("description"), 
 	        			   rs.getInt("quantity"), rs.getDouble("price"), rs.getDouble("weight"), rs.getDouble("length"));
 
 	        	   viewAllProductsList.add(product);
-	            }
+	           }
 	           
 	            c.close();
 	        }
@@ -86,7 +86,6 @@ public class ViewAllAddController extends HttpServlet {
 	            }
 	        }
 	        
-	        //jsp table headers
 	        request.setAttribute("productCode", "Product Code");
 			request.setAttribute("productName", "Name");
 			request.setAttribute("productDescription", "Description");

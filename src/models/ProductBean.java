@@ -24,6 +24,8 @@ public class ProductBean {
 		this.length = length;
 	}
 	
+
+	
 	
 	
 	public ProductBean(String name, String description, int stock, double price, double weight, double length){

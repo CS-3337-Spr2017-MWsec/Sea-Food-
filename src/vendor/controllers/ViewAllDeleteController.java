@@ -57,16 +57,14 @@ public class ViewAllDeleteController extends HttpServlet {
 
 	          ResultSet rs = stmt.executeQuery("SELECT * FROM `products`");
 
-	           while( rs.next() )
-	            {  
+	          while( rs.next() )
+	          {  
 	            
 	        	   ProductBean product = new ProductBean(rs.getInt("product_id"), rs.getString("name"), rs.getString("description"), 
 	        			   rs.getInt("quantity"), rs.getDouble("price"), rs.getDouble("weight"), rs.getDouble("length"));
 
 	        	   viewAllProductsList.add(product);
-	            }
-	           
-	            c.close();
+	           }
 	        }
 	        
 	        catch( SQLException e )
@@ -92,6 +90,7 @@ public class ViewAllDeleteController extends HttpServlet {
 			request.setAttribute("productWeight", "Weight");
 			request.setAttribute("productLength", "Length");
 			request.setAttribute("productPrice", "Price");
+			request.setAttribute("productQuantity", "Quantity");
 
 	    request.setAttribute("viewAllProductsList", viewAllProductsList);
 	        
