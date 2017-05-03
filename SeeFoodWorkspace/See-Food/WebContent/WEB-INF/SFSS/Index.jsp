@@ -29,7 +29,8 @@
 		FINAL GIF
 		<img align="left" src="https://giphy.com/gifs/crab-RVaqnLYmO79C0" width="320" height="213">
 		-->
-
+		
+		<br/>
 		<a href="SeeFoodController">Continue to site</a>
 	</div>
 </body>
