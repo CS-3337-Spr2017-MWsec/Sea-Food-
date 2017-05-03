@@ -19,6 +19,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 
 <body>
+
 	<!--
 	Nate's YT Account <iframe width="560" height="315"
 	<iframe style="float:right;" width="560" height="315" 
@@ -29,9 +30,17 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	<!--
 	NEW YT Account for webcamera.
 	-->
-	<iframe style="float:center;" width="560" height="315"
+	
+	<!-- CAMERA. -->
+				<iframe width="854" height="480" src="https://www.youtube.com/embed/-8XpJD7UShw" 
+				frameborder="0" allowfullscreen></iframe>
+				</iframe>
+				<br>
+				<br>
+				<br>
+	<!-- <iframe style="float:center;" width="560" height="315"
 	src=" https://www.youtube.com/embed/live_stream?channel=UCae3AP4kpj9yRx5C2e100Ng&autoplay=1"
-	frameborder="0" allowfullscreen></iframe>
+	frameborder="0" allowfullscreen></iframe> -->
 
 	<!-- NON-VIDEO STREAM
 	src="https://www.youtube.com/watch?v=4RUGmBxe65U"
@@ -41,12 +50,14 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 	<c:choose>
 		<c:when test="${empty isNull}">
 	--%>
+
 	<br>
-	<br>
+
 	See something you like? Enter a product code to get more detailed information!
 	<br>
 	<br>
-<form action="LiveCameraFeed" method="post">	
+	<br>
+<form action="ProductSelectionController" method="post">	
 Search by Product Code: 
 <input type="text" name="searchProductCode"  placeholder="Enter a search query" value=${param.searchProductCode}>
 
@@ -77,10 +88,9 @@ ${message}
  </c:forEach>
 
  </table>
- <br>
- <br>
- <br>
- <form action="SearchDescription" method="post">	
+<br>
+
+ <form action="SearchDescriptionController" method="post">	
 Search Product Descriptions: 
 <input type="text" name="searchProductDescription" value=${param.searchProductDescription}>
 <input type="submit" name="submit" value="Submit" />
