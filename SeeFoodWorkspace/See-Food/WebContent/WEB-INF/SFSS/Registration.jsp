@@ -54,7 +54,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 					<li><a href="">About</a></li>
 					<li><a href="ShoppingCartController">Shopping Cart</a></li>
 					<li><a href="Contact">Contact</a></li>
-					<li><a href="">Register</a></li>
+					<li><a href="RegistrationController">Register</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
