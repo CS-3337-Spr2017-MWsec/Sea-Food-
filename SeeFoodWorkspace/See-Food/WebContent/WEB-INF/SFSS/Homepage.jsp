@@ -96,10 +96,14 @@
 
 				<div style="float: right;">
 
-					<!-- CAMERA. -->
+					<!--
+					CAMERA
 					<iframe width="560" height="315"
 						src="https://www.youtube.com/embed/mTquHtU-pJI" frameborder="0"
 						allowfullscreen></iframe>
+					-->
+					
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/VX8SO0Pc7A0" frameborder="0" allowfullscreen></iframe>
 
 					<br/> <a href="ProductSelectionController"><button>Come and see what
 						we've got!</button></a> <br/>

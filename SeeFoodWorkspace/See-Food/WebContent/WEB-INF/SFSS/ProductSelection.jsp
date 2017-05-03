@@ -70,10 +70,15 @@
     -->
 	<center>
 		<div align="center">
+			<!--
+			CAMERA 
 			<iframe width="854" height="480"
 				src="https://www.youtube.com/embed/-8XpJD7UShw" frameborder="0"
 				allowfullscreen></iframe>
 			</iframe>
+			-->
+			
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/VX8SO0Pc7A0" frameborder="0" allowfullscreen></iframe>
 
 			<br> <h4>See something you like? Enter a product code to get more
 			detailed information! </h4><br> <br> <br>
