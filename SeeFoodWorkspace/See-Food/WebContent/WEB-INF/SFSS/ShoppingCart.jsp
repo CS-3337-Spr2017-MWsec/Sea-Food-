@@ -97,7 +97,7 @@
 					</p>
 
 					<c:forEach items="${userProducts}" var="product">
-						<li><c:choose>
+						<c:choose>
 								<c:when test="${product.delete}">
 									<!-- If product object is marked for removal. -->
 									<div style="">
@@ -139,7 +139,7 @@
 										<hr />
 									</div>
 								</c:otherwise>
-							</c:choose></li>
+							</c:choose>
 					</c:forEach>
 
 					<a href="SeeFoodController"><button>Continue shopping</button></a> &emsp; <input

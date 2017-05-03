@@ -39,9 +39,12 @@
 					<li><a href="ProductSelectionController">Market</a></li>
 					<li><a href="About">About</a></li>
 					<li><a href="ShoppingCartController">Shopping Cart</a></li>
+<<<<<<< HEAD
+=======
 					<li><a href="RegistrationController">Register</a></li>
 
 
+>>>>>>> 33f799a33d23623350d8e3db7ca0a3c544835f73
 				</ul>
 			</div>
 		</div>
@@ -50,6 +53,39 @@
 
 
 
+<<<<<<< HEAD
+    <div class="container pt">
+        <div class="row mt">
+            <div class="col-lg-6 col-lg-offset-3 centered">
+                 <h3>Problems? Concerns? Comments?<br/>Burning Desires?</h3>
+                 <h4>We read'em all!</h4>
+               
+            </div>
+        </div>
+        <div class="row mt">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form role="form">
+                    <div class="form-group">
+                        <input type="name" class="form-control" id="NameInputEmail1" placeholder="Your Name">
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="subjectEmail1" placeholder="Subject">
+                        <br>
+                    </div>
+                    <textarea class="form-control" rows="6" placeholder="Enter your text here"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-success">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+=======
 	<div class="container pt">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
@@ -82,6 +118,7 @@
 		</div>
 		<!-- /row -->
 	</div>
+>>>>>>> 33f799a33d23623350d8e3db7ca0a3c544835f73
 
 
 
