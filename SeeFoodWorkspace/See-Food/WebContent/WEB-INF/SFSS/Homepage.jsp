@@ -58,13 +58,16 @@
 
 	<c:if test="${not empty username}">
 		<div class='jumbotron' style="text-align: right;">
+			
+			<!--
+			TEST: SEEMS FINAL
+			-->
 			<img align="left"
 			src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png"
 			width="320" height="213">
 			
-			<!-- <h1>Hello, ${username}!</h1> -->
 			<header>
-			<h1>Hello, ${username}!</h1>
+				<h1>Hello, ${username}!</h1>
 			</header>
 			<a href="LoginController?logout=true"><button>Log Out</button></a>&emsp;
 			<a href="ShoppingCartController"><button>Shopping Cart</button></a>
@@ -72,6 +75,10 @@
 	</c:if>
 	<c:if test="${empty username}">
 		<div class='jumbotron' style="text-align: right;">
+			
+			<!--
+			TEST: SEEMS FINAL
+			-->
 			<img align="left"
 			src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png"
 			width="320" height="213">
@@ -79,8 +86,8 @@
 			<header>
 			<h1>Hello!</h1>
 			</header>
-			Have an account? <a href="UserLogin">Log in</a>&emsp; Don't have an
-			account? <a href="RegistrationController">Sign up!</a>
+			Have an account? <a style="background-color:#ffffff;" href="UserLogin">Log in</a>&emsp; Don't have an
+			account? <a style="background-color:#ffffff;" href="RegistrationController">Sign up!</a>
 		</div>
 	</c:if>
 
@@ -88,7 +95,6 @@
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
 				<h3 style="text-align: left;">Products</h3>
-				<hr>
 
 
 				<div style="float: right;">
@@ -98,8 +104,8 @@
 						src="https://www.youtube.com/embed/mTquHtU-pJI" frameborder="0"
 						allowfullscreen></iframe>
 
-					<br/> <a href="ProductSelectionController">Come and see what
-						we've got!</a> <br/>
+					<br/> <a href="ProductSelectionController"><button>Come and see what
+						we've got!</button></a> <br/>
 				</div>
 
 
@@ -112,6 +118,7 @@
 	<!-- LISTINGS OF PRODUCTS BELOW. -->
 	<div style="text-align: left;">
 		<c:forEach items="${listOfProducts}" var="product">
+			<div style="clear:right;">
 			<h2>
 				<strong>${product.name}</strong>
 			</h2>
@@ -121,13 +128,19 @@
 			</h3>
 			<h4>
 				<em>*${product.description}</em>
-			</h4>
-			<br/> Amount in stock: ${product.stock}&emsp; Price per pound:
+			<br/>
+			<br/>
+			<strong> Amount in stock: ${product.stock}&emsp; Price per pound:
 			<em>$${product.price}</em>&emsp; Weight: <em>${product.weight}</em>&emsp;
-			Length: <em>${product.length}</em>
+			Length: <em>${product.length}</em> </strong><br/>
+			</h4>
+			<br/>
+			<img src="${product.url}" width="300" height="300">
 			<br/>
 			<a href="ShoppingCartController?id=${product.id}"><button>Add
 					to Shopping Cart</button></a>
+			</div>
+			
 		</c:forEach>
 	</div>
 
@@ -144,14 +157,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<h4>My Bunker</h4>
+					<h4>Our Bunker</h4>
 					<p>
 						CSULA<br/>
 					</p>
 				</div>
 
 				<div class="col-lg-4">
-					<h4>My Links</h4>
+					<h4>Our Links</h4>
 					<p>
 						<a href="#">Dribbble</a> <br/>
 						<a href="#">Twitter</a> <br/>
@@ -160,7 +173,7 @@
 				</div>
 
 				<div class="col-lg-4">
-					<h4>About See-Food</h4>
+					<h4>About SeeFood</h4>
 					<p>
 						Put your heart, mind, and soul into even your smallest acts. This
 						is the secret of success.<br/>-Swami Sivananda

@@ -64,9 +64,9 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		<c:when test="${empty billing}">
 
 			<!-- <h3>A new SFSS family member!</h3> -->
-			<header>A new SFSS family member!</header>
+			<h1>A new SFSS family member!</h1>
 			<div class="container">
-				<h1 class="well">Registration Form</h1>
+				<h2 class="well">Registration Form</h2>
 				<div class="col-lg-12 well">
 					<h4>We just need your:</h4>
 					<form action="RegistrationController" method="POST">

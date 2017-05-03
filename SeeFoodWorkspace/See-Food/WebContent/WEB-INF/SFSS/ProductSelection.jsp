@@ -27,6 +27,16 @@
 <script src="assets/js/hover.zoom.js"></script>
 <script src="assets/js/hover.zoom.conf.js"></script>
 
+<style>
+	body{
+		/*
+		TEST
+		background-color:#ffffff;
+		*/
+		background-color: #FEC29B;
+	}
+</style>
+
 <title>Product Selection</title>
 </head>
 <body>
@@ -47,34 +57,29 @@
 					<li><a href="#">About</a></li>
 					<li><a href="ShoppingCartController">Shopping Cart</a></li>
 					<li><a href="">Contact</a></li>
-					<li><a href="">Register</a></li>
+					<li><a href="RegistrationController">Register</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 
+	<div id="grey">
 	<!--
     CAMERA.
     -->
 	<center>
-		<div class='jumbotron' style="text-align: right;">
-			<!-- TEST -->
-			<img align="left"
-				src="http://clipartix.com/wp-content/uploads/2016/04/Crabs-crab-clipart-free-clip-art-images-clipartwiz.png"
-				width="320" height="213">
-
+		<div align="center">
 			<iframe width="854" height="480"
 				src="https://www.youtube.com/embed/-8XpJD7UShw" frameborder="0"
 				allowfullscreen></iframe>
 			</iframe>
 
-			<br> See something you like? Enter a product code to get more
-			detailed information! <br> <br> <br>
+			<br> <h4>See something you like? Enter a product code to get more
+			detailed information! </h4><br> <br> <br>
 		</div>
 	</center>
 
-	<div id="grey">
 		<div class="container">
 			<center>
 				<h3>Product Search</h3>
@@ -145,6 +150,8 @@
 				</table>
 			</div>
 		</div>
+		
+		<a href="SeeFoodController">Go back</a>
 	</div>
 
 	<!-- footer -->
@@ -152,14 +159,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<h4>My Bunker</h4>
+					<h4>Our Bunker</h4>
 					<p>
 						CSULA<br />
 					</p>
 				</div>
 
 				<div class="col-lg-4">
-					<h4>My Links</h4>
+					<h4>Our Links</h4>
 					<p>
 						<a href="#">Dribbble</a><br /> <a href="#">Twitter</a><br /> <a
 							href="#">Facebook</a>
@@ -167,7 +174,7 @@
 				</div>
 
 				<div class="col-lg-4">
-					<h4>About See-Food</h4>
+					<h4>About SeeFood</h4>
 					<p>
 						Put your heart, mind, and soul into even your smallest acts. This
 						is the secret of success.<br />-Swami Sivananda
